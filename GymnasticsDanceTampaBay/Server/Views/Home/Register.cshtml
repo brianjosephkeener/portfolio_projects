@@ -1,0 +1,34 @@
+﻿<h1>Register</h1>
+@model User
+
+<form method="post" asp-action="RegisterForm" asp-controller="Home">
+    <div>
+        <label for="Username">Username</label>
+        <input type="Username" asp-for="Username">        
+        <span asp-validation-for="Username"></span>
+    </div>
+     <div>
+        <label for="Email">Email</label>
+        <input type="text" asp-for="Email">        
+        <span asp-validation-for="Email"></span>
+    </div>
+     <div>
+        
+        <label for="Password">Password</label>
+        <input type="password" asp-for="Password">
+        <span asp-validation-for="Password"></span>
+    </div>
+     <div>
+        
+        <label for="Confirm">Confirm</label>
+        <input type="password" name="Confirm" asp-for="Confirm">
+        <span asp-validation-for="Confirm"></span>
+    </div>
+    <input type="submit" value="Sign Up">
+</form>
+<br>
+<h2>-*-*-*-*-*-*-*-*-*-*-*-*-*-*</h2>
+<br>
+<h2>*-*-*-*-*-*-*-*-*-*-*-*-*-*-</h2>
+<br>
+<partial name="LoginPartial">

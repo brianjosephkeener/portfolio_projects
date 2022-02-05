@@ -1,0 +1,12 @@
+.zindex {
+    z-index: 9999;
+}
+
+.center-me {
+        margin: 0 auto;
+        display: block;
+}
+
+.top-page {
+    margin-top: 20vh;
+}

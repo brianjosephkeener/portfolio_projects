@@ -10,3 +10,43 @@
 .top-page {
     margin-top: 20vh;
 }
+
+.next-project {
+    margin-top: 100vh;
+    height: 100vh;
+    width: 95vw;
+}
+
+a {
+    text-decoration: none;
+}
+
+.present-container {
+    height: auto;
+    width: 80vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gym-b {
+    max-width: 50%;
+    border-radius: 8px;
+}
+
+.w {
+    color: white;
+}
+
+.ml {
+    margin-left: 50px;
+}
+
+.mt {
+    margin-top: 50px;
+}
+
+.mb {
+    margin-bottom: 150px;
+}

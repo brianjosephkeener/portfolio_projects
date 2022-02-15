@@ -21,10 +21,18 @@
         margin-bottom: 2.5px;
     }
     #extmenu {
+        position: absolute;
         bottom: 0;
-        width: 300px;
-        height: 300px;
+        width: 100vw;
+        height: 100vh;
         background-color: red;
         z-index: 1200;
+        animation-name: extend;
+        animation-duration: .75s;
     }
+    @keyframes extend {
+        from {right: -100vw;}
+        to {right: 0vw;}
+    }
+
 }

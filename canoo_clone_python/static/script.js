@@ -1,4 +1,5 @@
-let hampos = 0;
+let view = 0;
+
 const lines = document.querySelectorAll("line");
 
 function test() {

@@ -40,7 +40,7 @@ button, input[type="submit"], input[type="reset"] {
         flex-direction: column;
         animation-name: extend;
         animation-duration: .75s;
-        background-color: aqua;
+        background-color: #121212;
     }
     @keyframes extend {
         from {right: -100vw;}
@@ -53,7 +53,7 @@ button, input[type="submit"], input[type="reset"] {
         position: absolute;
         width: 100vw;
         height: 100vh;
-        background-color: aqua;
+        background-color: #121212;
     }
     .action-item-l {
         display: flex;
@@ -61,7 +61,7 @@ button, input[type="submit"], input[type="reset"] {
     }
     .action-item {
         flex: 1;
-        outline: 1.5px solid black;
+        outline: 1px solid #666666;
     }
     .action-item img {
         width: 100%;
@@ -72,13 +72,14 @@ button, input[type="submit"], input[type="reset"] {
         width: 100%;
         display: flex;
         align-items: center;
-        outline: 1.5px solid black;
+        outline: 1px solid #666666;
     }
     .action-item-text h2 {
         margin-left: 15px;
+        color: #dbd3cd;
     }
     .action-item-text:nth-last-child(1)
     {
-        border-bottom: 1.5px solid black;
+        border-bottom: 1px solid #666666;
     }
 }

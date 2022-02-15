@@ -5,14 +5,19 @@ function test() {
     console.log("test retract")
     const hammenu = document.getElementById("hamburger");
     hammenu.style.display = "flex";
-    lines.forEach(element => {
-        element.createElement('div');
-        element.classList = "line";
-    });
+    const extendmenu = document.getElementById("extmenu");
+    extendmenu.remove()
+    console.log(extendmenu);
 }
 
 function extendnav() {
     console.log("test extend")
     const hammenu = document.getElementById("hamburger");
     hammenu.style.display = "none";
+
+    const extendmenu = document.createElement("div");
+    const parent = document.getElementById("m-body")
+    document.body.insertBefore(extendmenu, parent)
+    console.log(extendmenu);
+    extendmenu.id = "extmenu"
   }

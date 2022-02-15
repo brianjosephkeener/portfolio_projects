@@ -4,13 +4,20 @@
 }
 
 @media (max-width: 768px) {
+    #hamburger {
+        position: absolute;
+        right: 3vw;
+        top: 3vh;
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        height: auto;
+    }
     .line {
-        height: 5px;
-        width: 40px;
-        border-radius: 10px;
-        background-color: #0e2431;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        margin-left: 10px;
+        height: 4px;
+        width: 30px;
+        background-color:#3c465e;
+        margin-top: 2.5px;
+        margin-bottom: 2.5px;
     }
 }

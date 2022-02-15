@@ -2,23 +2,27 @@ let view = 0;
 
 const lines = document.querySelectorAll("line");
 
-function test() {
-    console.log("test retract")
+function retractnav() {
     const hammenu = document.getElementById("hamburger");
     hammenu.style.display = "flex";
     const extendmenu = document.getElementById("extmenu");
+    const actionmenu = document.getElementById("action-menu");
     extendmenu.remove()
+    actionmenu.style.display = "none"
     console.log(extendmenu);
 }
 
 function extendnav() {
-    console.log("test extend")
     const hammenu = document.getElementById("hamburger");
     hammenu.style.display = "none";
 
     const extendmenu = document.createElement("div");
-    const parent = document.getElementById("m-body")
-    document.body.insertBefore(extendmenu, parent)
+    const parent = document.getElementById("m-body");
+    const actionmenu = document.getElementById("action-menu");
+    document.body.insertBefore(extendmenu, parent);
+    setTimeout(function(){
+        actionmenu.style.display = "flex";
+    },750);
     console.log(extendmenu);
-    extendmenu.id = "extmenu"
+    extendmenu.id = "extmenu";
   }

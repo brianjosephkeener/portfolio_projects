@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\root\\Desktop\\portfolio\\GymnasticsDanceTampaBay\\Server\\Server.csproj",
+  "FilePath": "c:\\Users\\root\\Desktop\\portfolio_projects\\GymnasticsDanceTampaBay\\Server\\Server.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -14402,58 +14402,58 @@
   "RootNamespace": "Server",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\root\\Desktop\\portfolio\\GymnasticsDanceTampaBay\\Server\\Views\\Home\\Register.cshtml",
-      "TargetPath": "Views\\Home\\Register.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\root\\Desktop\\portfolio\\GymnasticsDanceTampaBay\\Server\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\root\\Desktop\\portfolio\\GymnasticsDanceTampaBay\\Server\\Views\\Home\\Gallery.cshtml",
+      "FilePath": "c:\\Users\\root\\Desktop\\portfolio_projects\\GymnasticsDanceTampaBay\\Server\\Views\\Home\\Gallery.cshtml",
       "TargetPath": "Views\\Home\\Gallery.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\root\\Desktop\\portfolio\\GymnasticsDanceTampaBay\\Server\\Views\\Home\\About.cshtml",
-      "TargetPath": "Views\\Home\\About.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\root\\Desktop\\portfolio\\GymnasticsDanceTampaBay\\Server\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\root\\Desktop\\portfolio\\GymnasticsDanceTampaBay\\Server\\Views\\Home\\Index.cshtml",
+      "FilePath": "c:\\Users\\root\\Desktop\\portfolio_projects\\GymnasticsDanceTampaBay\\Server\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\root\\Desktop\\portfolio\\GymnasticsDanceTampaBay\\Server\\Views\\Shared\\_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\root\\Desktop\\portfolio\\GymnasticsDanceTampaBay\\Server\\Views\\_ViewImports.cshtml",
-      "TargetPath": "Views\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\root\\Desktop\\portfolio\\GymnasticsDanceTampaBay\\Server\\Views\\Shared\\Error.cshtml",
-      "TargetPath": "Views\\Shared\\Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\root\\Desktop\\portfolio\\GymnasticsDanceTampaBay\\Server\\Views\\Home\\LoginPartial.cshtml",
+      "FilePath": "c:\\Users\\root\\Desktop\\portfolio_projects\\GymnasticsDanceTampaBay\\Server\\Views\\Home\\LoginPartial.cshtml",
       "TargetPath": "Views\\Home\\LoginPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\root\\Desktop\\portfolio\\GymnasticsDanceTampaBay\\Server\\Views\\_ViewStart.cshtml",
+      "FilePath": "c:\\Users\\root\\Desktop\\portfolio_projects\\GymnasticsDanceTampaBay\\Server\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\root\\Desktop\\portfolio_projects\\GymnasticsDanceTampaBay\\Server\\Views\\Shared\\Error.cshtml",
+      "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\root\\Desktop\\portfolio_projects\\GymnasticsDanceTampaBay\\Server\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\root\\Desktop\\portfolio_projects\\GymnasticsDanceTampaBay\\Server\\Views\\Home\\About.cshtml",
+      "TargetPath": "Views\\Home\\About.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\root\\Desktop\\portfolio_projects\\GymnasticsDanceTampaBay\\Server\\Views\\Home\\Register.cshtml",
+      "TargetPath": "Views\\Home\\Register.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\root\\Desktop\\portfolio_projects\\GymnasticsDanceTampaBay\\Server\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\root\\Desktop\\portfolio_projects\\GymnasticsDanceTampaBay\\Server\\Views\\Home\\Privacy.cshtml",
+      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\root\\Desktop\\portfolio_projects\\GymnasticsDanceTampaBay\\Server\\Views\\_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
     }
   ],

@@ -4,6 +4,10 @@
     font-family: monospace;
 }
 
+body {
+    background-color: #e4e4e4;
+}
+
 button, input[type="submit"], input[type="reset"] {
 	background: none;
 	color: inherit;
@@ -15,15 +19,17 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 @media (max-width: 768px) {
-    #m-body {
-        display: flex;
-    }
     #home-logo {
         background-color: black;
         width: 210px;
         height: 95px;
         z-index: -1200;
-        align-self: center;
+        position: absolute;
+        top: 32px;
+        left: 0; 
+        right: 0; 
+        margin-left: auto; 
+        margin-right: auto; 
     }
     #hamburger {
         position: absolute;

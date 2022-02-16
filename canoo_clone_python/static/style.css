@@ -73,6 +73,7 @@ button, input[type="submit"], input[type="reset"] {
         display: flex;
         align-items: center;
         outline: 1px solid #666666;
+        letter-spacing: 2px;
     }
     .action-item-text h2 {
         margin-left: 15px;

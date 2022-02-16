@@ -22,6 +22,8 @@ function extendnav() {
     document.body.insertBefore(extendmenu, parent);
     setTimeout(function(){
         actionmenu.style.display = "flex";
+        actionmenu.style.position = "fixed";
+        actionmenu.style.left = "0";
     },750);
     console.log(extendmenu);
     extendmenu.id = "extmenu";

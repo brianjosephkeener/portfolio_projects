@@ -24,6 +24,7 @@ function extendnav() {
         actionmenu.style.display = "flex";
         actionmenu.style.position = "fixed";
         actionmenu.style.left = "0";
+        actionmenu.style.zIndex = "10";
     },750);
     console.log(extendmenu);
     extendmenu.id = "extmenu";

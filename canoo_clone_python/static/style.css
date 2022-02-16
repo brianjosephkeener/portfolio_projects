@@ -19,17 +19,24 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 @media (max-width: 768px) {
-    #home-logo {
-        background-color: black;
-        width: 210px;
-        height: 95px;
+    #first-top-img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
         z-index: -1200;
+    }
+    #home-logo {
+        width: 200px;
+        height: 85px;
         position: absolute;
         top: 32px;
         left: 0; 
         right: 0; 
         margin-left: auto; 
         margin-right: auto; 
+        z-index: 3;
     }
     #hamburger {
         position: absolute;

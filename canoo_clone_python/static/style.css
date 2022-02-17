@@ -39,7 +39,7 @@ button, input[type="submit"], input[type="reset"] {
         z-index: 4;
     }
     #hamburger {
-        position: absolute;
+        position: fixed;
         right: 3vw;
         top: 3vh;
         display: flex;
@@ -192,4 +192,10 @@ button, input[type="submit"], input[type="reset"] {
         justify-content: center;
         align-items: center;
     }
+    .car-show {
+        background-color: #f4f4f4;
+        width: 100vw;
+        height: 100vh;
+    }
+    
 }

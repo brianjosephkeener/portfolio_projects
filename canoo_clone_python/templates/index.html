@@ -69,17 +69,17 @@
         <div id="home-fp">
             <img src="{{ url_for('static', filename='home-1-canoo.png') }}" alt="canoo logo" id="first-top-img">
             <img src="{{ url_for('static', filename='wht-logo-home.png') }}" alt="canoo logo" id="home-logo">
-            <p class="home-fp-text">Lifestyle Vehicle</p>
-            <p class="home-fp-subhead">A LOFT ON WHEELS</p>
-            <p class="home-fp-subtext">Launching late 2022. Starting at $34,750*</p>
+            <p class="home-fp-text" name="fp-text">Lifestyle Vehicle</p>
+            <p class="home-fp-subhead" name="fp-text">A LOFT ON WHEELS</p>
+            <p class="home-fp-subtext" name="fp-text">Launching late 2022. Starting at $34,750*</p>
             <button class="learn-more-ab">LEARN MORE</button>
             <p class="PREORDER-NOW">PREORDER NOW</p>
             <div id="carousel">
                 <img src="{{ url_for('static', filename='left-chev-arrow.svg') }}" alt="previous photograph" onclick="carouselmov(-1)">
                 <div id="hp-line-container">
-                    <div class="hp-line-sel"></div>
-                    <div class="hp-line-unsel"></div>
-                    <div class="hp-line-unsel"></div>
+                    <div class="hp-line-sel" name="line" onclick="carouselmovline(1)"></div>
+                    <div class="hp-line-unsel" name="line" onclick="carouselmovline(2)"></div>
+                    <div class="hp-line-unsel" name="line" onclick="carouselmovline(3)"></div>
                 </div>
                 <img src="{{ url_for('static', filename='right-chev-arrow.svg') }}" alt="next photograph" onclick="carouselmov(1)">
             </div>

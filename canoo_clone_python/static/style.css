@@ -118,7 +118,7 @@ button, input[type="submit"], input[type="reset"] {
         text-align: center;
     }
     .home-fp-text {
-        position: relative;
+        position: absolute;
         top: 45.5vh;
         color: white;
         letter-spacing: 4px;
@@ -127,8 +127,8 @@ button, input[type="submit"], input[type="reset"] {
         text-transform: uppercase;
     }
     .home-fp-subhead {
-        position:relative;
-        top: 48vh;
+        position: absolute;
+        top: 57.5vh;
         color: white;
         letter-spacing: 2px;
         font-size: 17px;
@@ -136,15 +136,16 @@ button, input[type="submit"], input[type="reset"] {
     }
     .home-fp-subtext {
         position:relative;
-        top: 48vh;
-        color: grey;
+        top: 60vh;
+        color: white;
+        opacity: .5;
         font-size: 14px;
         letter-spacing: 2px;
         line-height: 1.5;
     }
     .learn-more-ab {
-        position:relative;
-        top: 52.5vh;
+        position:absolute;
+        top: 70vh;
         background-color: white;
         text-align: center;
         color: black;
@@ -155,8 +156,8 @@ button, input[type="submit"], input[type="reset"] {
         font-weight: 100;
     }
     .PREORDER-NOW {
-        position:relative;
-        top: 55vh;
+        position:absolute;
+        top: 77.5vh;
         text-align: center;
         color: white;
         letter-spacing: -0.5px;
@@ -165,8 +166,8 @@ button, input[type="submit"], input[type="reset"] {
         border-bottom: 1px solid rgba(128, 128, 128, .75);
     }
     #carousel {
-        position:relative;
-        top: 58vh;
+        position:absolute;
+        top: 90vh;
         width: 75%;
         height: 50px;
         display: flex;
@@ -187,7 +188,7 @@ button, input[type="submit"], input[type="reset"] {
     }
     #hp-line-container {
         display: flex;
-        width: 250px;
+        width: 350px;
         justify-content: center;
         align-items: center;
     }

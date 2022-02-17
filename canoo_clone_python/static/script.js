@@ -29,3 +29,21 @@ function extendnav() {
     console.log(extendmenu);
     extendmenu.id = "extmenu";
   }
+
+  let currslide = 1;
+
+  function carouselmov(movamount) {
+      if(movamount == 1 && currslide == 3)
+      {
+          currslide = 1;
+      }
+      else if(movamount == -1 && currslide == 1)
+      {
+          currslide = 3;
+      }
+      else {
+        currslide++;
+      }
+      const currimage = document.getElementById("first-top-img");
+      currimage.src =`static/home-${currslide}-canoo.png`
+  }

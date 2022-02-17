@@ -75,13 +75,13 @@
             <button class="learn-more-ab">LEARN MORE</button>
             <p class="PREORDER-NOW">PREORDER NOW</p>
             <div id="carousel">
-                <img src="{{ url_for('static', filename='left-chev-arrow.svg') }}" alt="previous photograph" onclick="">
+                <img src="{{ url_for('static', filename='left-chev-arrow.svg') }}" alt="previous photograph" onclick="carouselmov(-1)">
                 <div id="hp-line-container">
                     <div class="hp-line-sel"></div>
                     <div class="hp-line-unsel"></div>
                     <div class="hp-line-unsel"></div>
                 </div>
-                <img src="{{ url_for('static', filename='right-chev-arrow.svg') }}" alt="next photograph" onclick="">
+                <img src="{{ url_for('static', filename='right-chev-arrow.svg') }}" alt="next photograph" onclick="carouselmov(1)">
             </div>
         </div>
 </body>

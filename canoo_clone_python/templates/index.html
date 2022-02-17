@@ -10,8 +10,6 @@
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </head>
 <body>
-        <img src="{{ url_for('static', filename='home-1-canoo.png') }}" alt="canoo logo" id="first-top-img">
-        <img src="{{ url_for('static', filename='wht-logo-home.png') }}" alt="canoo logo" id="home-logo">
         <nav>
             <div id="hamburger" onclick="extendnav()">
                 <div class="line"></div>
@@ -68,5 +66,23 @@
                 </div>
             </div>
         </nav>
+        <div id="home-fp">
+            <img src="{{ url_for('static', filename='home-1-canoo.png') }}" alt="canoo logo" id="first-top-img">
+            <img src="{{ url_for('static', filename='wht-logo-home.png') }}" alt="canoo logo" id="home-logo">
+            <p class="home-fp-text">Lifestyle Vehicle</p>
+            <p class="home-fp-subhead">A LOFT ON WHEELS</p>
+            <p class="home-fp-subtext">Launching late 2022. Starting at $34,750*</p>
+            <button class="learn-more-ab">LEARN MORE</button>
+            <p class="PREORDER-NOW">PREORDER NOW</p>
+            <div id="carousel">
+                <img src="{{ url_for('static', filename='left-chev-arrow.svg') }}" alt="previous photograph" onclick="">
+                <div id="hp-line-container">
+                    <div class="hp-line-sel"></div>
+                    <div class="hp-line-unsel"></div>
+                    <div class="hp-line-unsel"></div>
+                </div>
+                <img src="{{ url_for('static', filename='right-chev-arrow.svg') }}" alt="next photograph" onclick="">
+            </div>
+        </div>
 </body>
 </html>

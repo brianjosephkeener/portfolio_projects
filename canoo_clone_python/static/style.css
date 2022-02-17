@@ -36,7 +36,7 @@ button, input[type="submit"], input[type="reset"] {
         right: 0; 
         margin-left: auto; 
         margin-right: auto; 
-        z-index: 3;
+        z-index: 4;
     }
     #hamburger {
         position: absolute;
@@ -65,6 +65,7 @@ button, input[type="submit"], input[type="reset"] {
         animation-name: extend;
         animation-duration: .75s;
         background-color: #121212;
+        z-index: 3;
     }
     @keyframes extend {
         from {right: -100vw;}
@@ -106,5 +107,88 @@ button, input[type="submit"], input[type="reset"] {
     .action-item-text:nth-last-child(1)
     {
         border-bottom: 1px solid #666666;
+    }
+
+    #home-fp {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .home-fp-text {
+        position: relative;
+        top: 45.5vh;
+        color: white;
+        letter-spacing: 4px;
+        font-size: 35px;
+        line-height: 1.5;
+        text-transform: uppercase;
+    }
+    .home-fp-subhead {
+        position:relative;
+        top: 48vh;
+        color: white;
+        letter-spacing: 2px;
+        font-size: 17px;
+        line-height: 1.5;
+    }
+    .home-fp-subtext {
+        position:relative;
+        top: 48vh;
+        color: grey;
+        font-size: 14px;
+        letter-spacing: 2px;
+        line-height: 1.5;
+    }
+    .learn-more-ab {
+        position:relative;
+        top: 52.5vh;
+        background-color: white;
+        text-align: center;
+        color: black;
+        letter-spacing: -0.5px;
+        width: 138px;
+        height: 50px;
+        font-size: 18px;
+        font-weight: 100;
+    }
+    .PREORDER-NOW {
+        position:relative;
+        top: 55vh;
+        text-align: center;
+        color: white;
+        letter-spacing: -0.5px;
+        width: auto;
+        font-size: 20px;
+        border-bottom: 1px solid rgba(128, 128, 128, .75);
+    }
+    #carousel {
+        position:relative;
+        top: 58vh;
+        width: 75%;
+        height: 50px;
+        display: flex;
+    }
+    .hp-line-unsel {
+        background-color: dimgray;
+        width: 50px;
+        height: 3.5px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .hp-line-sel {
+        background-color: white;
+        width: 50px;
+        height: 3.5px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    #hp-line-container {
+        display: flex;
+        width: 250px;
+        justify-content: center;
+        align-items: center;
     }
 }

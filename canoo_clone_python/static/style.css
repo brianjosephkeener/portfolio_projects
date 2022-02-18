@@ -46,6 +46,7 @@ button, input[type="submit"], input[type="reset"] {
         flex-direction: column;
         width: auto;
         height: auto;
+        z-index: 1;
     }
     .line {
         height: 4px;
@@ -251,5 +252,22 @@ button, input[type="submit"], input[type="reset"] {
         font-size: 18px;
         letter-spacing: 2px;
         border-bottom: .25px solid rgba(0, 0, 0, 0.75);
+    }
+    .l-title {
+        text-align: center;
+        margin-top: 25%;
+        font-size: 18px;
+    }
+    .press-container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        justify-content: space-evenly;
+        box-sizing: inherit;
+    }
+    .press-container img {
+        width: 100px;
+        height: 100px;
     }
 }

@@ -270,4 +270,18 @@ button, input[type="submit"], input[type="reset"] {
         width: 100px;
         height: 100px;
     }
+    .last_hp {
+        display: flex;
+        flex-direction: column;
+    }
+    #sign-up-form {
+        width: 100%;
+        height: 65%;
+        background-color: red;
+    }
+    #show-reel-container {
+        width: 100%;
+        height: 35%;
+        background-color: green;
+    }
 }

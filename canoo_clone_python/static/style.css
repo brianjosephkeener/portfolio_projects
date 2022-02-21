@@ -286,7 +286,6 @@ button, input[type="submit"], input[type="reset"] {
     #sign-up-form {
         width: 100%;
         height: 65%;
-        background-color: red;
         display: flex;
         flex-direction: column;
     }
@@ -300,12 +299,12 @@ button, input[type="submit"], input[type="reset"] {
     }
     #sign-up-form input {
         color: #b2b2b2;
-        width: 70%;
+        width: 80%;
         margin-left: 5%;
-        height: 5%;
+        height: 100%;
         letter-spacing: 1px;
         text-transform: uppercase;
-        font-size: 16px;
+        font-size: 20px;
     }
     #show-reel-container {
         width: 100%;
@@ -318,5 +317,9 @@ button, input[type="submit"], input[type="reset"] {
         width: 90%;
         margin-left: 5%;
         
+    }
+    #right-arrow-lead img {
+        height: 30px;
+        width: 30px;
     }
 }

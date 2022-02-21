@@ -1,5 +1,20 @@
 let view = 0;
 
+function disableScroll() {
+    // Get the current page scroll position
+    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+  
+        // if any scroll is attempted, set this to the previous value
+        window.onscroll = function() {
+            window.scrollTo(scrollLeft, scrollTop);
+        };
+}
+  
+function enableScroll() {
+    window.onscroll = function() {};
+}
+
 function retractnav() {
     const hammenu = document.getElementById("hamburger");
     hammenu.style.display = "flex";
@@ -7,10 +22,13 @@ function retractnav() {
     const actionmenu = document.getElementById("action-menu");
     extendmenu.remove()
     actionmenu.style.display = "none"
-    console.log(extendmenu);
+    enableScroll();
 }
 
 function extendnav() {
+
+    disableScroll();
+
     const hammenu = document.getElementById("hamburger");
     hammenu.style.display = "none";
 

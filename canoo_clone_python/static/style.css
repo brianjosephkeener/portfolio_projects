@@ -67,7 +67,7 @@ button, input[type="submit"], input[type="reset"] {
     }
     #extmenu {
         position: absolute;
-        bottom: 0;
+        top: 0;
         width: 100vw;
         height: 100vh;
         display: hidden;

@@ -135,3 +135,19 @@ function extendnav() {
             lines[0].className = "hp-line-unsel";
       }
 }
+
+    function leadGen() {
+    const lg = document.getElementById("sign-up-form");
+    const formo = document.getElementById("sign-up-form-in");
+    lg.children[0].remove();
+    document.getElementById("right-arrow-lead").remove();
+    lg.children[0].style.marginTop = "30%";
+    lg.children[0].on
+    lg.id = "sign-up-form-cli";
+    
+    const fname = document.createElement("div");
+    fname.id = "fname"
+    lg.children[0].children[0].append(fname);
+    fname.placeholder = "First Name";
+
+}

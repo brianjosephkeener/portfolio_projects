@@ -141,13 +141,48 @@ function extendnav() {
     const formo = document.getElementById("sign-up-form-in");
     lg.children[0].remove();
     document.getElementById("right-arrow-lead").remove();
-    lg.children[0].style.marginTop = "30%";
     lg.children[0].on
     lg.id = "sign-up-form-cli";
+
+    const bBorder = [];
+    for (let index = 0; index < 4; index++) {
+        bBorder.push(document.createElement("div"));
+        bBorder[index].className = "custom-input-border";
+    }
     
-    const fname = document.createElement("div");
-    fname.id = "fname"
+    const fname = document.createElement("input");
+    fname.type = "text"
     lg.children[0].children[0].append(fname);
-    fname.placeholder = "First Name";
+    fname.placeholder = "FIRST NAME";
+    fname.className = ".input-l";
+    lg.children[0].children[0].append(bBorder[0]);
+
+    const lname = document.createElement("input");
+    lname.type = "text"
+    lg.children[0].children[0].append(lname);
+    lname.placeholder = "LAST NAME";
+    lname.className = ".input-l";
+    lg.children[0].children[0].append(bBorder[1]);
+
+    const phone = document.createElement("input");
+    phone.type = "number"
+    lg.children[0].children[0].append(phone);
+    phone.placeholder = "PHONE (Optional)";
+    phone.className = ".input-l";
+    lg.children[0].children[0].append(bBorder[2]);
+
+    const postal = document.createElement("input");
+    postal.type = "number"
+    lg.children[0].children[0].append(postal);
+    phone.placeholder = "POSTAL CODE";
+    phone.className = ".input-l";
+    lg.children[0].children[0].append(bBorder[3]);
+
+    const pInterest = document.createElement("input");
+    pInterest.type = "text"
+    lg.children[0].children[0].append(pInterest);
+    pInterest.placeholder = "Product Interest";
+    pInterest.className = ".input-l";
+    lg.children[0].children[0].append(bBorder[4]);
 
 }

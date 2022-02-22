@@ -311,7 +311,7 @@ button, input[type="submit"], input[type="reset"] {
         height: 35%;
         background-color: green;
     }
-    #custom-input-border {
+    .custom-input-border {
         height: 2.5px;
         background-color: #b2b2b2;
         width: 90%;
@@ -340,10 +340,10 @@ button, input[type="submit"], input[type="reset"] {
         text-align: center;
         font-size: 32px;
         margin-bottom: 40px;
-        margin-top: 125px;
         line-height: 1.5;
     }
     #sign-up-form-cli input {
+        margin-top: 10%;
         color: #b2b2b2;
         width: 80%;
         margin-left: 5%;

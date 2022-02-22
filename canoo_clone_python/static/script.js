@@ -145,7 +145,7 @@ function extendnav() {
     lg.id = "sign-up-form-cli";
 
     const bBorder = [];
-    for (let index = 0; index < 4; index++) {
+    for (let index = 0; index < 5; index++) {
         bBorder.push(document.createElement("div"));
         bBorder[index].className = "custom-input-border";
     }
@@ -174,8 +174,8 @@ function extendnav() {
     const postal = document.createElement("input");
     postal.type = "number"
     lg.children[0].children[0].append(postal);
-    phone.placeholder = "POSTAL CODE";
-    phone.className = ".input-l";
+    postal.placeholder = "POSTAL CODE";
+    postal.className = ".input-l";
     lg.children[0].children[0].append(bBorder[3]);
 
     const pInterest = document.createElement("input");

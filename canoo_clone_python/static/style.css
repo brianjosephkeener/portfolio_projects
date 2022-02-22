@@ -351,4 +351,10 @@ button, input[type="submit"], input[type="reset"] {
         letter-spacing: 1px;
         font-size: 20px;
     }
+    #lgSubmitB {
+        justify-self: center;
+        background-color: black;
+        width: 90% !important;
+        padding: 5%;
+    }
 }

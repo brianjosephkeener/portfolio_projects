@@ -185,4 +185,9 @@ function extendnav() {
     pInterest.className = ".input-l";
     lg.children[0].children[0].append(bBorder[4]);
 
+    const lgSubmitB = document.createElement("input");
+    lgSubmitB.type="submit";
+    lgSubmitB.value="SUBMIT";
+    lgSubmitB.id="lgSubmitB";
+    lg.children[0].children[0].append(lgSubmitB);
 }

@@ -154,6 +154,7 @@ function extendnav() {
     fname.type = "text"
     lg.children[0].children[0].append(fname);
     fname.placeholder = "FIRST NAME";
+    fname.name = "fname";
     fname.className = ".input-l";
     lg.children[0].children[0].append(bBorder[0]);
 
@@ -161,6 +162,7 @@ function extendnav() {
     lname.type = "text"
     lg.children[0].children[0].append(lname);
     lname.placeholder = "LAST NAME";
+    lname.name = "lname";
     lname.className = ".input-l";
     lg.children[0].children[0].append(bBorder[1]);
 
@@ -169,6 +171,8 @@ function extendnav() {
     lg.children[0].children[0].append(phone);
     phone.placeholder = "PHONE (Optional)";
     phone.className = ".input-l";
+    phone.name = "phone";
+    phone.maxLength = 14;
     lg.children[0].children[0].append(bBorder[2]);
 
     const postal = document.createElement("input");
@@ -176,13 +180,17 @@ function extendnav() {
     lg.children[0].children[0].append(postal);
     postal.placeholder = "POSTAL CODE";
     postal.className = ".input-l";
+    postal.name = "postal";
+    postal.maxLength = 5;
     lg.children[0].children[0].append(bBorder[3]);
 
     const pInterest = document.createElement("input");
     pInterest.type = "text"
     lg.children[0].children[0].append(pInterest);
     pInterest.placeholder = "Product Interest";
+    pInterest.name = "pInterest";
     pInterest.className = ".input-l";
+    pInterest.maxLength = 25;
     lg.children[0].children[0].append(bBorder[4]);
 
     const lgSubmitB = document.createElement("input");

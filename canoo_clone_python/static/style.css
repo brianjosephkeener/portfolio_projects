@@ -360,4 +360,32 @@ button, input[type="submit"], input[type="reset"] {
         letter-spacing: 1.5px !important;
         box-shadow: 0px 2px 2px rgba(138, 136, 136, 0.753);
     }
+
+.hwrap {
+    overflow: hidden; 
+    background: #eee;
+  }
+   
+
+  .hmove { display: flex; }
+  
+
+  .hitem {
+    flex-shrink: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+    letter-spacing: 2.5px;
+    font-size: 28px;
+    white-space:nowrap;
+    color: green;
+  }
+   
+
+  @keyframes tickerh {
+    0% { transform: translate3d(100%, 0, 0); }
+    100% { transform: translate3d(-100%, 0, 0); }
+  }
+  .hmove { animation: tickerh linear 30s infinite; }
 }

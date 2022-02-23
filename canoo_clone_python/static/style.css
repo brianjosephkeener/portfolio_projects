@@ -379,12 +379,38 @@ button, input[type="submit"], input[type="reset"] {
     white-space:nowrap;
     color: rgba(0, 255, 109, 0.87);
     animation: tickerh linear 20s infinite;
-    
   }
    
 
   @keyframes tickerh {
     0% { transform: translate3d(105%, 25%, 0); }
     100% { transform: translate3d(-200%, 25%, 0); }
+  }
+
+  .footer-container {
+      display: flex;
+      height: 25%;
+  }
+
+  .footer-text-t {
+    border-bottom: 1px solid #666666;
+    border-right: 1px solid #666666;
+    background-color: #121212;
+    text-align: center;
+    flex: 1;
+    color: white;
+    letter-spacing: 5px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer-img {
+      border-right: 1px solid #666666;
+      background-color: #121212;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
   }
 }

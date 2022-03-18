@@ -1,0 +1,1 @@
+C:\Users\root\Desktop\portfolio_projects\Window_Cal_Clone\Calculv2\Calculator\Calculator.UWP\Calculator.UWP.csproj;x86

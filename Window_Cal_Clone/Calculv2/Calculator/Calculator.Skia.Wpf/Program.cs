@@ -1,4 +1,0 @@
-﻿
-namespace Calculator.Skia.Gtk
-{
-}

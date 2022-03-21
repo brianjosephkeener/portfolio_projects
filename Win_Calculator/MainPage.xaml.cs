@@ -35,7 +35,7 @@ namespace Win_Calculator
             }
         }
 
-        private decimal temp1, temp2, result = decimal.Zero;
+        private double temp1, temp2, result = double.MinValue;
         private string ops = "";
 
         private void Page_KeyDown(object sender, KeyRoutedEventArgs e)
@@ -79,6 +79,36 @@ namespace Win_Calculator
             if (e.Key == Windows.System.VirtualKey.Number9)
             {
                 _9_Click(sender, e);
+            }
+            if (e.Key == Windows.System.VirtualKey.Enter)
+            {
+                equal_Click(sender, e);
+            }
+
+            /*
+                There is no alternative at this time to add non-numpad decimal, +, -, division or multiplication for WIN-UI/3 (UWP).
+                Currently, there is a request in the microsoft github for a change to add more virtual keys. (2020)
+            */
+
+            if (e.Key == Windows.System.VirtualKey.Decimal) // numpad decimal
+            {
+                dot_Click(sender, e);
+            }
+            if (e.Key == Windows.System.VirtualKey.Add) // numpad + sign
+            {
+                add_Click(sender, e);
+            }
+            if (e.Key == Windows.System.VirtualKey.Subtract) // numpad - sign
+            {
+                subtract_Click(sender, e);
+            }
+            if (e.Key == Windows.System.VirtualKey.Divide) // numpad / sign
+            {
+                divide_Click(sender, e);
+            }
+            if (e.Key == Windows.System.VirtualKey.Add) // numpad * sign
+            {
+                multiply_Click(sender, e);
             }
         }
 
@@ -151,43 +181,43 @@ namespace Win_Calculator
 
         private void subtract_Click(object sender, RoutedEventArgs e)
         {
-            temp1 = decimal.Parse(output.Text);
+            temp1 = double.Parse(output.Text);
             output.Text = "";
             ops = "-";
         }
 
         private void multiply_Click(object sender, RoutedEventArgs e)
         {
-            temp1 = decimal.Parse(output.Text);
+            temp1 = double.Parse(output.Text);
             output.Text = "";
             ops = "x";
         }
 
         private void Percent_Click(object sender, RoutedEventArgs e)
         {
-            temp1 = decimal.Parse(output.Text);
+            temp1 = double.Parse(output.Text);
             output.Text = "";
             ops = "%";
         }
 
         private void add_Click(object sender, RoutedEventArgs e)
         {
-            temp1 = decimal.Parse(output.Text);
+            temp1 = double.Parse(output.Text);
             output.Text = "";
             ops = "+";
         }
 
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
-            temp1 = decimal.Zero;
-            temp2 = decimal.Zero;
-            result = decimal.Zero;
+            temp1 = double.MinValue;
+            temp2 = double.MinValue;
+            result = double.MinValue;
             output.Text = "0";
         }
 
         private void divide_Click(object sender, RoutedEventArgs e)
         {
-            temp1 = decimal.Parse(output.Text);
+            temp1 = double.Parse(output.Text);
             output.Text = "";
             ops = "÷";
         }
@@ -197,19 +227,19 @@ namespace Win_Calculator
             switch (ops)
             {
                 case "-":
-                    temp2 = decimal.Parse(output.Text);
+                    temp2 = double.Parse(output.Text);
                     result = temp1 - temp2;
                     output.Text = result.ToString();
                     ops = "";
                     break;
                 case "+":
-                    temp2 = decimal.Parse(output.Text);
+                    temp2 = double.Parse(output.Text);
                     result = temp1 + temp2;
                     output.Text = result.ToString();
                     ops = "";
                     break;
                 case "÷":
-                    temp2 = decimal.Parse(output.Text);
+                    temp2 = double.Parse(output.Text);
                     if(temp2 != 0)
                     {
                         result = temp1 / temp2;
@@ -220,13 +250,13 @@ namespace Win_Calculator
                     output.Text = "∞";
                     break;
                 case "x":
-                    temp2 = decimal.Parse(output.Text);
+                    temp2 = double.Parse(output.Text);
                     result = temp1 * temp2;
                     output.Text = result.ToString();
                     ops = "";
                     break;
                 case "%":
-                    temp2 = decimal.Parse(output.Text);
+                    temp2 = double.Parse(output.Text);
                     if (temp1 != 0)
                     {
                         result = (temp2 / temp1) * 100;

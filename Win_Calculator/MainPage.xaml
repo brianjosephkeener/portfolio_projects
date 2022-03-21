@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" KeyDown="Page_KeyDown">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" KeyDown="Page_KeyDown" Height="464">
     <StackPanel>
         <StackPanel Margin="0,5,0,0" Orientation="Horizontal">
             <Image Source="/Assets/Windows-10-Calculator-Fluent-Icon-Big-256 (1).png" Stretch="Fill" Width="15" Height="15" HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="30,0,0,0"></Image>

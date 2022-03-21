@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\root\Desktop\portfolio_projects\Win_Calculator\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-03-20T07:55:55.164</Modified>
+      <Modified>2022-03-21T19:47:33.776</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\root\Desktop\portfolio_projects\Win_Calculator\bin\x86\Debug\Win_Calculator.exe">
       <PackagePath>entrypoint\Win_Calculator.exe</PackagePath>
-      <Modified>2022-03-20T07:55:54.985</Modified>
+      <Modified>2022-03-21T19:47:33.602</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\root\.nuget\packages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -538,7 +538,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\root\Desktop\portfolio_projects\Win_Calculator\bin\x86\Debug\Win_Calculator.xr.xml">
       <PackagePath>Win_Calculator.xr.xml</PackagePath>
-      <Modified>2022-03-20T07:12:53.928</Modified>
+      <Modified>2022-03-20T08:01:53.142</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\root\Desktop\portfolio_projects\Win_Calculator\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
@@ -546,7 +546,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\root\Desktop\portfolio_projects\Win_Calculator\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2022-03-20T07:50:48.289</Modified>
+      <Modified>2022-03-20T08:01:53.156</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.19041.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -558,7 +558,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\root\Desktop\portfolio_projects\Win_Calculator\bin\x86\Debug\Core\Win_Calculator.exe">
       <PackagePath>Win_Calculator.exe</PackagePath>
-      <Modified>2022-03-20T07:55:55.162</Modified>
+      <Modified>2022-03-21T19:47:33.775</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

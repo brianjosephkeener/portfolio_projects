@@ -1,0 +1,16 @@
+/osver:6.2
+/appcontainer
+/runtime:mrt100_app
+/eh:clr
+/pdb
+"/nativeLink:C:\Program Files (x86)\Microsoft SDKs\UWPNuGetPackages\microsoft.net.native.compiler\1.7.6\tools\x86\ilc\lib\Native\vmath.lib"
+/customImports
+/methodBodyFolding
+"C:\Users\root\Desktop\portfolio_projects\Win_Calculator\obj\x86\Release\ilc\intermediate\MDIL\Win_Calculator.mdilexe"
+"/i:C:\Users\root\Desktop\portfolio_projects\Win_Calculator\obj\x86\Release\ilc\intermediate\MDIL"
+"/out:C:\Users\root\Desktop\portfolio_projects\Win_Calculator\obj\x86\Release\ilc\intermediate\Native\Win_Calculator.exe"
+"/pdbAltPath:C:\Users\root\Desktop\portfolio_projects\Win_Calculator\bin\x86\Release\ilc"
+"/res:C:\Users\root\Desktop\portfolio_projects\Win_Calculator\obj\x86\Release\ilc\intermediate\Native.res"
+"/i:C:\Program Files (x86)\Microsoft SDKs\UWPNuGetPackages\microsoft.net.native.sharedlibrary-x86\1.7.3\tools\SharedLibrary\ret\MDIL"
+/shimexe
+"/classlib:SharedLibrary"

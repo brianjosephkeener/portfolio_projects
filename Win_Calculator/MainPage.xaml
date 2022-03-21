@@ -99,5 +99,8 @@
                 =
             </Button>
         </StackPanel>
+        <StackPanel Margin="0,30,0,0">
+            <TextBlock x:Name="letter_input" FontSize="32" FontFamily="Microsoft Sans Serif" Opacity="0.6" FontStyle="Italic" TextAlignment="Center" Text=""/>
+        </StackPanel>
     </StackPanel>
 </Page>

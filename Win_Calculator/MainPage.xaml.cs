@@ -21,7 +21,7 @@ using Windows.UI.Core;
 namespace Win_Calculator
 {
     /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// If non-interactive element in window is clicked on or brought to focus after start up, keypresses are not recognized. This can be reset with a button click. THANKS FOR NO HELP MICROSOFT. 
     /// </summary>
     public sealed partial class MainPage : Page
     {
@@ -29,17 +29,126 @@ namespace Win_Calculator
         {
             this.InitializeComponent();
             CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
-            if(Window.Current.CoreWindow.GetKeyState(Windows.System.VirtualKey.Escape) == CoreVirtualKeyStates.Down)
-            {
-                Application.Current.Exit();
-            }
         }
 
         private double temp1, temp2, result = double.MinValue;
-        private string ops = "";
+        private string ops;
+        public string word = "";
+
+        private void letter_reset()
+        {
+            letter_input.Text = "";
+        }
+        private void letter_test(object sender, KeyRoutedEventArgs e) // want the text to persist after finishing the word but also dont want to do it ¯\_( ͡❛ ͜ʖ͡❛ )_/¯
+        {
+            if (e.Key == Windows.System.VirtualKey.O && letter_input.Text == "")
+            {
+                letter_input.Text += "o";
+                return;
+            }
+            if (e.Key == Windows.System.VirtualKey.N && letter_input.Text == "o")
+            {
+                letter_input.Text += "n";
+                return;
+            }
+            if (e.Key == Windows.System.VirtualKey.E && letter_input.Text == "on")
+            {
+                letter_input.Text += "e";
+                _1_Click(sender, e);
+                letter_reset();
+                return;
+            }
+            if (e.Key == Windows.System.VirtualKey.T && letter_input.Text == "")
+            {
+                letter_input.Text += "t";
+                return;
+            }
+            if (e.Key == Windows.System.VirtualKey.W && letter_input.Text == "t")
+            {
+                letter_input.Text += "w";
+                return;
+            }
+            else if (e.Key == Windows.System.VirtualKey.H && letter_input.Text == "t")
+            {
+                letter_input.Text += "h";
+                return;
+            }
+            if (e.Key == Windows.System.VirtualKey.O && letter_input.Text == "tw")
+            {
+                letter_input.Text += "o";
+                _2_Click(sender, e);
+                letter_reset();
+                return;
+            }
+            if (e.Key == Windows.System.VirtualKey.R && letter_input.Text == "th")
+            {
+                letter_input.Text += "r";
+                return;
+            }
+            if (e.Key == Windows.System.VirtualKey.E && letter_input.Text == "thr")
+            {
+                letter_input.Text += "e";
+                return;
+            }
+            if (e.Key == Windows.System.VirtualKey.E && letter_input.Text == "thre")
+            {
+                letter_input.Text += "e";
+                _3_Click(sender, e);
+                letter_reset();
+                return;
+            }
+            if (e.Key == Windows.System.VirtualKey.F && letter_input.Text == "")
+            {
+                letter_input.Text += "f";
+                return;
+            }
+            if (e.Key == Windows.System.VirtualKey.O && letter_input.Text == "f")
+            {
+                letter_input.Text += "o";
+                return;
+            }
+            else if(e.Key == Windows.System.VirtualKey.I && letter_input.Text == "f")
+            {
+                letter_input.Text += "i";
+                return;
+            }
+            if (e.Key == Windows.System.VirtualKey.U && letter_input.Text == "fo")
+            {
+                letter_input.Text += "u";
+                return;
+            }
+            if (e.Key == Windows.System.VirtualKey.R && letter_input.Text == "fou")
+            {
+                letter_input.Text += "e";
+                _4_Click(sender, e);
+                letter_reset();
+                return;
+            }
+            if (e.Key == Windows.System.VirtualKey.V && letter_input.Text == "fi")
+            {
+                letter_input.Text += "v";
+                return;
+            }
+            if (e.Key == Windows.System.VirtualKey.E && letter_input.Text == "fiv")
+            {
+                letter_input.Text += "e";
+                _5_Click(sender, e);
+                letter_reset();
+                return;
+            }
+            else
+            {
+                letter_reset();
+            }
+        }
 
         private void Page_KeyDown(object sender, KeyRoutedEventArgs e)
         {
+            letter_test(sender, e);
+            if(e.Key == Windows.System.VirtualKey.Escape)
+            {
+                Application.Current.Exit();
+            }
             if(e.Key == Windows.System.VirtualKey.Number0)
             {
                 _0_Click(sender, e);
@@ -80,7 +189,7 @@ namespace Win_Calculator
             {
                 _9_Click(sender, e);
             }
-            if (e.Key == Windows.System.VirtualKey.Enter)
+            if (e.Key == Windows.System.VirtualKey.End) // personal preference to use End
             {
                 equal_Click(sender, e);
             }

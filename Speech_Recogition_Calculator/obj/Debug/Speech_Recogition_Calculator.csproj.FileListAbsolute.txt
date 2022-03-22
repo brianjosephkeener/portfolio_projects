@@ -1,0 +1,15 @@
+C:\Users\root\Desktop\portfolio_projects\Speech_Recogition_Calculator\bin\Debug\Speech_Recogition_Calculator.exe.config
+C:\Users\root\Desktop\portfolio_projects\Speech_Recogition_Calculator\bin\Debug\Speech_Recogition_Calculator.exe
+C:\Users\root\Desktop\portfolio_projects\Speech_Recogition_Calculator\bin\Debug\Speech_Recogition_Calculator.pdb
+C:\Users\root\Desktop\portfolio_projects\Speech_Recogition_Calculator\obj\Debug\Speech_Recogition_Calculator.csproj.AssemblyReference.cache
+C:\Users\root\Desktop\portfolio_projects\Speech_Recogition_Calculator\obj\Debug\MainWindow.g.cs
+C:\Users\root\Desktop\portfolio_projects\Speech_Recogition_Calculator\obj\Debug\App.g.cs
+C:\Users\root\Desktop\portfolio_projects\Speech_Recogition_Calculator\obj\Debug\Speech_Recogition_Calculator_MarkupCompile.cache
+C:\Users\root\Desktop\portfolio_projects\Speech_Recogition_Calculator\obj\Debug\Speech_Recogition_Calculator_MarkupCompile.lref
+C:\Users\root\Desktop\portfolio_projects\Speech_Recogition_Calculator\obj\Debug\MainWindow.baml
+C:\Users\root\Desktop\portfolio_projects\Speech_Recogition_Calculator\obj\Debug\Speech_Recogition_Calculator.g.resources
+C:\Users\root\Desktop\portfolio_projects\Speech_Recogition_Calculator\obj\Debug\Speech_Recogition_Calculator.Properties.Resources.resources
+C:\Users\root\Desktop\portfolio_projects\Speech_Recogition_Calculator\obj\Debug\Speech_Recogition_Calculator.csproj.GenerateResource.cache
+C:\Users\root\Desktop\portfolio_projects\Speech_Recogition_Calculator\obj\Debug\Speech_Recogition_Calculator.csproj.CoreCompileInputs.cache
+C:\Users\root\Desktop\portfolio_projects\Speech_Recogition_Calculator\obj\Debug\Speech_Recogition_Calculator.exe
+C:\Users\root\Desktop\portfolio_projects\Speech_Recogition_Calculator\obj\Debug\Speech_Recogition_Calculator.pdb

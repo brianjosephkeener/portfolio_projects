@@ -1,0 +1,14 @@
+﻿<Window x:Class="Speech_Recogition_Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Speech_Recogition_Calculator"
+        mc:Ignorable="d"
+        Title="SR_Calculator" Height="300" Width="600" Loaded="Window_Loaded">
+    <StackPanel Background="DarkGray">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,60,0,0">
+            <TextBlock x:Name="output" FontFamily="Microsoft Sans Serif" FontWeight="Bold" FontSize="32">waiting...</TextBlock>
+        </StackPanel>
+    </StackPanel>
+</Window>

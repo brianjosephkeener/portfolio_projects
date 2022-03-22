@@ -63,10 +63,33 @@ namespace Speech_Recogition_Calculator
         private void RecognizeSD(object sender, SpeechDetectedEventArgs e)
         {
             counter = 0;
+            Timer();
         }
         private void ListenSR(object sender, SpeechRecognizedEventArgs e)
         {
-            throw new NotImplementedException();
+            string speech = e.Result.Text;
+            if(speech == "Hey")
+            {
+                listen.RecognizeAsyncCancel();
+                syn.SpeakAsync("Yo");
+                recognize.RecognizeAsync(RecognizeMode.Multiple);
+            }
+        }
+        private void Timer()
+        {
+            System.Timers.Timer aTimer = new System.Timers.Timer();
+            aTimer.Interval = 1000;
+            aTimer.Enabled = true;
+            if(counter == 10)
+            {
+                recognize.RecognizeAsyncCancel();
+            }
+            else if (counter == 11)
+            {
+                aTimer.Enabled = false;
+                listen.RecognizeAsync(RecognizeMode.Multiple);
+                counter = 0;
+            }
         }
     }
 }

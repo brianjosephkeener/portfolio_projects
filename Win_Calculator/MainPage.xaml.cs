@@ -41,6 +41,28 @@ namespace Win_Calculator
         }
         private void letter_test(object sender, KeyRoutedEventArgs e) // want the text to persist after finishing the word but also dont want to do it ¯\_( ͡❛ ͜ʖ͡❛ )_/¯
         {
+            if (e.Key == Windows.System.VirtualKey.Z && letter_input.Text == "")
+            {
+                letter_input.Text += "z";
+                return;
+            }
+            if (e.Key == Windows.System.VirtualKey.E && letter_input.Text == "z")
+            {
+                letter_input.Text += "e";
+                return;
+            }
+            if (e.Key == Windows.System.VirtualKey.R && letter_input.Text == "ze")
+            {
+                letter_input.Text += "r";
+                return;
+            }
+            if (e.Key == Windows.System.VirtualKey.O && letter_input.Text == "zer") // zero finish
+            {
+                letter_input.Text += "o";
+                _0_Click(sender, e);
+                letter_reset();
+                return;
+            }
             if (e.Key == Windows.System.VirtualKey.O && letter_input.Text == "")
             {
                 letter_input.Text += "o";
@@ -51,7 +73,7 @@ namespace Win_Calculator
                 letter_input.Text += "n";
                 return;
             }
-            if (e.Key == Windows.System.VirtualKey.E && letter_input.Text == "on")
+            if (e.Key == Windows.System.VirtualKey.E && letter_input.Text == "on") // one finish
             {
                 letter_input.Text += "e";
                 _1_Click(sender, e);
@@ -73,7 +95,7 @@ namespace Win_Calculator
                 letter_input.Text += "h";
                 return;
             }
-            if (e.Key == Windows.System.VirtualKey.O && letter_input.Text == "tw")
+            if (e.Key == Windows.System.VirtualKey.O && letter_input.Text == "tw") // two finish
             {
                 letter_input.Text += "o";
                 _2_Click(sender, e);
@@ -90,7 +112,7 @@ namespace Win_Calculator
                 letter_input.Text += "e";
                 return;
             }
-            if (e.Key == Windows.System.VirtualKey.E && letter_input.Text == "thre")
+            if (e.Key == Windows.System.VirtualKey.E && letter_input.Text == "thre") // three finish
             {
                 letter_input.Text += "e";
                 _3_Click(sender, e);
@@ -117,7 +139,7 @@ namespace Win_Calculator
                 letter_input.Text += "u";
                 return;
             }
-            if (e.Key == Windows.System.VirtualKey.R && letter_input.Text == "fou")
+            if (e.Key == Windows.System.VirtualKey.R && letter_input.Text == "fou") // four finish
             {
                 letter_input.Text += "e";
                 _4_Click(sender, e);
@@ -129,10 +151,98 @@ namespace Win_Calculator
                 letter_input.Text += "v";
                 return;
             }
-            if (e.Key == Windows.System.VirtualKey.E && letter_input.Text == "fiv")
+            if (e.Key == Windows.System.VirtualKey.E && letter_input.Text == "fiv") // five finish
             {
                 letter_input.Text += "e";
                 _5_Click(sender, e);
+                letter_reset();
+                return;
+            }
+            if(e.Key == Windows.System.VirtualKey.S && letter_input.Text == "")
+            {
+                letter_input.Text += "s";
+                return;
+            }
+            if (e.Key == Windows.System.VirtualKey.I && letter_input.Text == "s")
+            {
+                letter_input.Text += "i";
+                return;
+            }
+            else if (e.Key == Windows.System.VirtualKey.E && letter_input.Text == "s")
+            {
+                letter_input.Text += "e";
+                return;
+            }
+            if (e.Key == Windows.System.VirtualKey.X && letter_input.Text == "si") // six finish 
+            {
+                letter_input.Text += "x";
+                _6_Click(sender, e);
+                letter_reset();
+                return;
+            }
+            if (e.Key == Windows.System.VirtualKey.V && letter_input.Text == "se")
+            {
+                letter_input.Text += "v";
+                return;
+            }
+            if (e.Key == Windows.System.VirtualKey.E && letter_input.Text == "sev")
+            {
+                letter_input.Text += "e";
+                return;
+            }
+            if (e.Key == Windows.System.VirtualKey.N && letter_input.Text == "seve") // seven finish
+            {
+                letter_input.Text += "n";
+                _7_Click(sender, e);
+                letter_reset();
+                return;
+            }
+            if (e.Key == Windows.System.VirtualKey.E && letter_input.Text == "")
+            {
+                letter_input.Text += "e";
+                return;
+            }
+            if (e.Key == Windows.System.VirtualKey.I && letter_input.Text == "e")
+            {
+                letter_input.Text += "i";
+                return;
+            }
+            if (e.Key == Windows.System.VirtualKey.G && letter_input.Text == "ei")
+            {
+                letter_input.Text += "g";
+                return;
+            }
+            if (e.Key == Windows.System.VirtualKey.H && letter_input.Text == "eig")
+            {
+                letter_input.Text += "h";
+                return;
+            }
+            if (e.Key == Windows.System.VirtualKey.T && letter_input.Text == "eigh") // eight finish
+            {
+                letter_input.Text += "t";
+                _8_Click(sender, e);
+                letter_reset();
+                return;
+            }
+            if (e.Key == Windows.System.VirtualKey.N && letter_input.Text == "")
+            {
+                letter_input.Text += "n";
+                return;
+            }
+            if (e.Key == Windows.System.VirtualKey.I && letter_input.Text == "n")
+            {
+                letter_input.Text += "i";
+                return;
+            }
+            if (e.Key == Windows.System.VirtualKey.N && letter_input.Text == "ni")
+            {
+                letter_input.Text += "n";
+                return;
+            }
+            if (e.Key == Windows.System.VirtualKey.E && letter_input.Text == "nin") // nine finish
+            {
+                letter_input.Text += "e";
+                _9_Click(sender, e);
                 letter_reset();
                 return;
             }

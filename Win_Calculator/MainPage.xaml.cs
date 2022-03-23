@@ -21,7 +21,14 @@ using Windows.UI.Core;
 namespace Win_Calculator
 {
     /// <summary>
-    /// If non-interactive element in window is clicked on or brought to focus after start up, keypresses are not recognized. This can be reset with a button click. THANKS FOR NO HELP MICROSOFT. 
+    ///  ToDO:
+    ///  * Fix text persistance on word input
+    ///  * finish all button functionality (1/x, x^2, 2sqrx, DEL, CE)
+    ///  * finish text function calls to +, -, etc
+    ///  * never coming back to this ever again
+    ///  * reset number after doing cal
+    ///  * responsive design to width/height of window container (event handler -> set font, button size = to a default + .6(width))
+    ///     - ✨ make UI easy on the eyes ✨
     /// </summary>
     public sealed partial class MainPage : Page
     {

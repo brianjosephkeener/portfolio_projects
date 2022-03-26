@@ -1,0 +1,7 @@
+/home/brian/Desktop/online_store/bin/Debug/net6.0/publish/online_store
+/home/brian/Desktop/online_store/bin/Debug/net6.0/publish/appsettings.Development.json
+/home/brian/Desktop/online_store/bin/Debug/net6.0/publish/appsettings.json
+/home/brian/Desktop/online_store/bin/Debug/net6.0/publish/online_store.dll
+/home/brian/Desktop/online_store/bin/Debug/net6.0/publish/online_store.deps.json
+/home/brian/Desktop/online_store/bin/Debug/net6.0/publish/online_store.runtimeconfig.json
+/home/brian/Desktop/online_store/bin/Debug/net6.0/publish/online_store.pdb

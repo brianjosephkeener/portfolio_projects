@@ -1,4 +1,6 @@
 ﻿using System;
+using Terminal.Gui;
+using NStack;
 
 namespace Proj_0
 {
@@ -6,7 +8,7 @@ namespace Proj_0
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("hello");
+            App initApp = new App();
         }
     }
 }

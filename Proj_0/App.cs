@@ -1,6 +1,11 @@
+using System;
 using Terminal.Gui;
 using NStack;
+using Proj_0.Models;
+using Proj_0.Data;
 
+namespace Proj_0
+{
 class App
 {
     internal App()
@@ -23,7 +28,6 @@ class App
             // Creates a menubar, the item "New" has a help menu.
             var menu = new MenuBar(new MenuBarItem[] {
                         new MenuBarItem ("_Actions", new MenuItem [] {
-                            new MenuItem ("_Register New Employee","", null),
                             new MenuItem ("_Quit", "", () => { if (Quit ()) top.Running = false; })
                         }),
                     });
@@ -69,4 +73,5 @@ class App
 
             Application.Run();
     }
+}
 }

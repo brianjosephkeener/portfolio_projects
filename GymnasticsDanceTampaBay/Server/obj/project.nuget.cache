@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "J3PAkVZh3Fb07b/5qzDOKXLFb/wvvJb6MUiBxe0QeRI6JD08kyR3UqoVRGtDnLMuIMhFeBLyW9ASz/KWcY9dDA==",
+  "dgSpecHash": "7Ni6CvqezZsbc7qS8/BSMNkkFiKkhYOKEsJb/6AsH1JeNUZ2VndqAlPlvQdXb+y1CPZuUFNDvXgZPbjLq5qsVg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\root\\Desktop\\portfolio\\GymnasticsDanceTampaBay\\server\\Server.csproj",
+  "projectFilePath": "c:\\Users\\root\\Desktop\\portfolio_projects\\GymnasticsDanceTampaBay\\Server\\Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\root\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\root\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
@@ -29,7 +29,11 @@
     "C:\\Users\\root\\.nuget\\packages\\pomelo.jsonobject\\2.2.1\\pomelo.jsonobject.2.2.1.nupkg.sha512",
     "C:\\Users\\root\\.nuget\\packages\\system.collections.immutable\\1.7.1\\system.collections.immutable.1.7.1.nupkg.sha512",
     "C:\\Users\\root\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
-    "C:\\Users\\root\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512"
+    "C:\\Users\\root\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",
+    "C:\\Users\\root\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\root\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\root\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\root\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.23\\microsoft.netcore.app.host.win-x64.3.1.23.nupkg.sha512"
   ],
   "logs": []
 }

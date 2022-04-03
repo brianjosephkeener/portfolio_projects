@@ -62,6 +62,52 @@ namespace Proj_0.Data
             return result;
         }
 
+        public List<Room> GetAllRooms(int location_id_input)
+        {
+            List<Room> result = new List<Room>();
+            using SqlConnection connection = new SqlConnection(this._connectionString);
+            connection.Open();
+
+            using SqlCommand cmd = new($"SELECT * FROM Room WHERE location_id = {location_id_input}", connection);
+
+            using SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                int id = reader.GetInt32(0);
+                string name = reader.GetString(1);
+                int amount = reader.GetInt32(2);
+                decimal price = reader.GetDecimal(3);
+                string description = reader.GetString(4);
+                int location_id = location_id_input;
+                DateTime CreatedAt = reader.GetDateTime(5);
+                DateTime UpdatedAt = reader.GetDateTime(6);
+                result.Add(new Room (id, name, amount, price, description, location_id, CreatedAt, UpdatedAt));
+            }
+
+            connection.Close();
+            return result;
+        }
+
+        public string GetLocation(int id)
+        {
+            string result = "";
+            using SqlConnection connection = new SqlConnection(this._connectionString);
+            connection.Open();
+
+            using SqlCommand cmd = new($"SELECT name FROM Location WHERE id = {id}", connection);
+
+            using SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                result = reader.GetString(0);
+            }
+
+            connection.Close();
+            return result;
+        }
+
         public string FindUsername(string username, int location_id)
         {
             string result = "";
@@ -94,6 +140,31 @@ namespace Proj_0.Data
             connection.Close();
             return result;
 
+        }
+
+        public bool RegisterGuest(string confirmation_number, string first_name, string last_name, string room, decimal credit, int durationofstay, byte checked_in, int location_id, int room_id)
+        {
+            string result = "";
+            using SqlConnection connection = new SqlConnection(this._connectionString);
+            connection.Open();
+            using SqlCommand cmd = new($"SELECT confirmation_number FROM Guest WHERE confirmation_number = '{confirmation_number}'", connection);
+            using SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                result = reader.GetString(0);
+            }
+            connection.Close();
+            if(result == "")
+            {
+                result = "";
+                connection.Open();
+            using SqlCommand cmd2 = new($"INSERT INTO GUEST (first_name, last_name, room, credit, confirmation_number, durationofstay, checked_in, location_id, room_id) VALUES ('{first_name}', '{last_name}', '{room}', {credit}, '{confirmation_number}', {durationofstay}, {checked_in}, {location_id}, {room_id})", connection);
+            Console.WriteLine($"INSERT INTO GUEST (first_name, last_name, room, credit, confirmation_number, durationofstay, checked_in, location_id, room_id) VALUES ('{first_name}', '{last_name}', '{room}', {credit}, '{confirmation_number}', {durationofstay}, {checked_in}, {location_id}, {room_id})");
+            using SqlDataReader reader2 = cmd2.ExecuteReader();
+            connection.Close();
+                return true;
+            }
+            return false;
         }
     }
 }

@@ -75,7 +75,7 @@ namespace Proj_0.Models
 
         public DateTime SetUpdatedAt(DateTime UpdatedAt)
         {
-            return this.UpdatedAt = UpdatedAt;
+            return this.UpdatedAt = System.DateTime.UtcNow;
         }
         
     }

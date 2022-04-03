@@ -39,5 +39,61 @@ namespace Proj_0.Data
             connection.Close();
             return result;
         }
+        public List<Location> GetAllLocations()
+        {
+            List<Location> result = new List<Location>();
+            using SqlConnection connection = new SqlConnection(this._connectionString);
+            connection.Open();
+
+            using SqlCommand cmd = new("SELECT * FROM Location", connection);
+
+            using SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                int id = reader.GetInt32(0);
+                string name = reader.GetString(1);
+                DateTime CreatedAt = reader.GetDateTime(2);
+                DateTime UpdatedAt = reader.GetDateTime(3);
+                result.Add(new Location (id, name, CreatedAt, UpdatedAt));
+            }
+
+            connection.Close();
+            return result;
+        }
+
+        public string FindUsername(string username, int location_id)
+        {
+            string result = "";
+            using SqlConnection connection = new SqlConnection(this._connectionString);
+            connection.Open();
+            using SqlCommand cmd = new($"SELECT username, location_id FROM Employee WHERE username = '{username}' AND location_id = {location_id}", connection);
+            using SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                result = reader.GetString(0);
+            }
+
+            connection.Close();
+            return result;
+
+        }
+
+        public string Login(string username, string password, int location_id)
+        {
+            string result = "";
+            using SqlConnection connection = new SqlConnection(this._connectionString);
+            connection.Open();
+            using SqlCommand cmd = new($"SELECT admin FROM Employee WHERE username = '{username}' AND location_id = {location_id} AND password = '{password}'", connection);
+            using SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                result = reader.GetByte(0).ToString();
+            }
+
+            connection.Close();
+            return result;
+
+        }
     }
 }

@@ -134,7 +134,7 @@ class App
                             ustring[] guestsresultarr = new ustring[guestresult.Count];
                                 for (int i = 0; i < guestresult.Count; i++)
                                 {
-                                    guestsresultarr[i] = ustring.Make($"Name: {guestresult[i].getFirstName()} {guestresult[i].getLastName()} | Room: {guestresult[i].getRoom()} | Credits Remaining: {guestresult[i].getCredit()} | Checkedin? : {guestresult[i].getCheckedIn() |}" );
+                                    guestsresultarr[i] = ustring.Make($"Name: {guestresult[i].getFirstName()} {guestresult[i].getLastName()} | Room: {guestresult[i].getRoom()} | Credits Remaining: {guestresult[i].getCredit()} | Checkedin? : {guestresult[i].getCheckedIn()}" );
                                     Label temp = new Label(3, 8+i, guestsresultarr[i]);
                                     Button tempB = new Button(100, 8+i, "Edit" );
                                     tempcontainer.Add(temp);
@@ -203,11 +203,13 @@ class App
             {
                 ClearWindow();
                 List<Room> rooms = repo.GetAllRooms(Globals.current_location);
+                List<int> room_ids = new List<int>();
 
             ustring[] loc_rooms = new ustring[rooms.Count];
             for (int i = 0; i < rooms.Count; i++)
             {
                 loc_rooms[i] = ustring.Make($"{rooms[i].getName()} | Vacancies: {rooms[i].getAmount()} |  Price: {rooms[i].getPrice()} | Description: {rooms[i].getDescription()}");
+                room_ids.Add(rooms[i].getId());
             }
             MenuBar employee_menu_RG = new MenuBar(new MenuBarItem[] {
                         new MenuBarItem ("_Actions", new MenuItem [] {
@@ -235,7 +237,7 @@ class App
                 RadioGroup room_selection = new RadioGroup(3, 27, loc_rooms);
                 Button Submit_RegGuest = new Button(30, 30+rooms.Count, "Submit");
             Submit_RegGuest.Clicked += () => {
-                repo.RegisterGuest(confirmation_number_t.Text.ToString(), first_name_t.Text.ToString(), last_name_t.Text.ToString(), room_t.Text.ToString(), Decimal.Parse(credit_t.Text.ToString()), Int32.Parse(durationofstay_t.Text.ToString()), Byte.Parse((checked_in_RG.SelectedItem).ToString()), Globals.current_location, room_selection.SelectedItem+1);
+                repo.RegisterGuest(confirmation_number_t.Text.ToString(), first_name_t.Text.ToString(), last_name_t.Text.ToString(), room_t.Text.ToString(), Decimal.Parse(credit_t.Text.ToString()), Int32.Parse(durationofstay_t.Text.ToString()), Byte.Parse((checked_in_RG.SelectedItem).ToString()), Globals.current_location, room_ids[room_selection.SelectedItem]);
                 Register_Complete();
             };
                 win.Add(instructions, currLoc, first_name, first_name_t, last_name, last_name_t, room, room_t, credit, credit_t, confirmation_number, confirmation_number_t, durationofstay, durationofstay_t, checked_in, checked_in_RG, Submit_RegGuest, room_selection);

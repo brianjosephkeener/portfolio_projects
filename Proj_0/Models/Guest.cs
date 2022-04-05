@@ -102,7 +102,6 @@ namespace Proj_0.Models
         public bool getCheckedIn()
         {
             byte f = 0;
-            Console.WriteLine(this.checked_in);
             return (this.checked_in == f) ? false : true;
         }
 

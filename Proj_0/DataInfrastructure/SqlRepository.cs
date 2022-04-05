@@ -114,7 +114,6 @@ public SqlRepository(string connectionString)
                 location_id = reader.GetInt32(10);
                 int room_id = reader.GetInt32(11);
                 Guest guest = new Guest(id, first_name, last_name, room, location_id, room_id, created_at, updated_at, checked_in, durationofstay, credit, confirmation_number);
-                Console.WriteLine(guest.getConfirmNum());
                 return guest;                
             }
             return new Guest(1, "ERROR", "ERROR", "ERROR", 1, 1, DateTime.UtcNow, DateTime.UtcNow, 0, 0, 0.0M, "ERROR");
@@ -247,11 +246,37 @@ public SqlRepository(string connectionString)
         return result;
     }
 
+    public List<Guest> GuestAll(int location_id)
+    {
+        List<Guest> result = new List<Guest>();
+        using SqlConnection connection = new SqlConnection(this._connectionString);
+        connection.Open();
+        using SqlCommand cmd = new($"SELECT * FROM Guest WHERE location_id = {location_id};", connection);
+        using SqlDataReader reader = cmd.ExecuteReader();
+        while(reader.Read())
+        {
+            int id = reader.GetInt32(0);
+            string first_name = reader.GetString(1);
+            string last_name = reader.GetString(2);
+            string room = reader.GetString(3);
+            decimal credit = reader.GetDecimal(4);
+            string confirmation_number = reader.GetString(5);
+            int durationofstay = reader.GetInt32(6);
+            byte checked_in = reader.GetByte(7);
+            DateTime CreatedAt = reader.GetDateTime(8);
+            DateTime UpdatedAt = reader.GetDateTime(9);
+            int Location_id = reader.GetInt32(10);
+            int room_id = reader.GetInt32(11);
+            result.Add(new Guest (id, first_name, last_name, room, Location_id, room_id, CreatedAt, UpdatedAt, checked_in, durationofstay, credit, confirmation_number));
+        }
+        return result;
+    }
+
         public void EditGuest(int id, string confirmation_number, string first_name, string last_name, string room, decimal credit, int durationofstay, int location_id, int room_id)
         {
         using SqlConnection connection = new SqlConnection(this._connectionString);
         connection.Open();
-        using SqlCommand cmd = new SqlCommand($"UPDATE Guest SET first_name = '{first_name}', last_name = {last_name}, room = '{room}', credit = {credit}, durationofstay = {durationofstay}, updated_at = SYSDATETIME(), room_id = {room_id} WHERE id = {id}", connection);
+        using SqlCommand cmd = new SqlCommand($"UPDATE Guest SET first_name = '{first_name}', last_name = '{last_name}', room = '{room}', credit = {credit}, durationofstay = {durationofstay}, updated_at = SYSDATETIME(), room_id = {room_id} WHERE id = {id}", connection);
         using SqlDataReader reader = cmd.ExecuteReader();
     }
 

@@ -85,6 +85,77 @@ class App
                 return true;
             }
 
+            void EmployeeScreen()
+            {
+                        Label GuestS = new Label(3, 4, "Guest Lookup");
+                        TextField GuestS_t = new TextField(3, 3, 40, "");
+                        Button Search = new Button(3, 6, "Search");
+                        List<Label> tempcontainer = new List<Label>();
+                        List<Button> tempcontainer_B = new List<Button>();
+                        Search.Clicked += () => 
+                        {
+                            if(GuestS_t.Text.ToString() == "")
+                            {
+                                win.RemoveAll();
+                                win.Add(GuestS, GuestS_t, Search);
+                                tempcontainer.Clear();
+                                List<Guest> guestresult = repo.GuestAll(Globals.current_location);
+                            ustring[] guestsresultarr = new ustring[guestresult.Count];
+                                for (int i = 0; i < guestresult.Count; i++)
+                                {
+                                    guestsresultarr[i] = ustring.Make($"Name: {guestresult[i].getFirstName()} {guestresult[i].getLastName()} | Room: {guestresult[i].getRoom()} | Credits Remaining: {guestresult[i].getCredit()} | Checkedin? : {guestresult[i].getCheckedIn()}" );
+                                    Label temp = new Label(3, 8+i, guestsresultarr[i]);
+                                    Button tempB = new Button(100, 8+i, "Edit" );
+                                    tempcontainer.Add(temp);
+                                    tempcontainer_B.Add(tempB);
+                                }
+                                List<Guest> guest = new List<Guest>();
+                                for (int i = 0; i < tempcontainer.Count; i++)
+                                {
+                                    win.Add(tempcontainer[i]);
+                                    win.Add(tempcontainer_B[i]);
+                                    Console.WriteLine(i);
+                                    tempcontainer_B[i].Clicked += () => {
+                                    Console.WriteLine(i);
+                                    guest.Add(repo.ViewGuest(guestresult[i].getId(), Globals.current_location));
+                                    EditGuest(guest[i]); // i ends up being length of results not adding to every iteration
+                                    };
+                                    
+                                }
+                            }
+                            else
+                            {
+                            win.RemoveAll();
+                            tempcontainer.Clear();
+                            win.Add(GuestS, GuestS_t, Search);
+                            List<Guest> guestresult = repo.GuestLookUp(GuestS_t.Text.ToString(), Globals.current_location);
+                            ustring[] guestsresultarr = new ustring[guestresult.Count];
+                            for (int i = 0; i < guestresult.Count; i++)
+                            {
+                                guestsresultarr[i] = ustring.Make($"Name: {guestresult[i].getFirstName()} {guestresult[i].getLastName()} | Room: {guestresult[i].getRoom()} | Credits Remaining: {guestresult[i].getCredit()} | Checkedin? : {guestresult[i].getCheckedIn()}" );
+                                Label temp = new Label(3, 8+i, guestsresultarr[i]);
+                                Button tempB = new Button(100, 8+i, "Edit" );
+                                tempcontainer.Add(temp);
+                                tempcontainer_B.Add(tempB);
+                            }
+                                List<Guest> guest = new List<Guest>();
+                            for (int i = 0; i < tempcontainer.Count; i++)
+                            {
+                                win.Add(tempcontainer[i]);
+                                win.Add(tempcontainer_B[i]);
+                                tempcontainer_B[i].Clicked += () => {
+                                guest.Add(repo.ViewGuest(guestresult[i].getId(), Globals.current_location));
+                                EditGuest(guest[i]); // i ends up being length of results not adding to every iteration
+                                };
+                                
+                            }
+                            }
+                            GuestS_t.Text = "";
+                        };
+                        
+                        win.Add(GuestS, GuestS_t, Search);
+            }
+
             void ClearWindow()
             {
                     top.RemoveAll();
@@ -95,6 +166,7 @@ class App
             void Register_Complete()
             {
                 ClearWindow();
+                EmployeeScreen();
             MenuBar employee_menu = new MenuBar(new MenuBarItem[] {
                         new MenuBarItem ("_Actions", new MenuItem [] {
                             new MenuItem ("_Register Guest", "", () => { if (true) RegisterGuestWin ();}),
@@ -106,7 +178,6 @@ class App
             MenuBar admin_menu = new MenuBar(new MenuBarItem[] {
                         new MenuBarItem ("_Actions", new MenuItem [] {
                             new MenuItem ("_Register Guest", "", () => { if (true) RegisterGuestWin ();}),
-                            new MenuItem ("_Guest Edit", "", () => { if (Quit ()) top.Running = false; }),
                             new MenuItem ("_Employee Actions", "", () => { if (Quit ()) top.Running = false; }),
                             new MenuItem ("_Loggout", "", () => { if (true) Loggout(); }),
                             new MenuItem ("_Quit", "", () => { if (Quit ()) top.Running = false; }),
@@ -177,11 +248,9 @@ class App
                         }),
                     });
              /*
-              - add labels for textfields
-              - fix final submit 
+
               - fix edit button on previous page
               - write unit tests
-              - checked-in?
              */
                 Label first_name_l = new Label(3, 3, "First Name: ");
                 TextField first_name = new TextField(3, 4, 40, $"{guest.getFirstName()}");
@@ -213,7 +282,6 @@ class App
             MenuBar employee_menu = new MenuBar(new MenuBarItem[] {
                         new MenuBarItem ("_Actions", new MenuItem [] {
                             new MenuItem ("_Register Guest", "", () => { if (true) RegisterGuestWin ();}),
-                            new MenuItem ("_Guest Edit", "", () => { if (Quit ()) top.Running = false; }),
                             new MenuItem ("_Loggout", "", () => { if (true) Loggout(); }),
                             new MenuItem ("_Quit", "", () => { if (Quit ()) top.Running = false; }),
                         }),
@@ -222,7 +290,6 @@ class App
             MenuBar admin_menu = new MenuBar(new MenuBarItem[] {
                         new MenuBarItem ("_Actions", new MenuItem [] {
                             new MenuItem ("_Register Guest", "", () => { if (RegisterGuestWin ()) ;}),
-                            new MenuItem ("_Guest Edit", "", () => { if (Quit ()) top.Running = false; }),
                             new MenuItem ("_Employee Actions", "", () => { if (Quit ()) top.Running = false; }),
                             new MenuItem ("_Loggout", "", () => { if (true) Loggout(); }),
                             new MenuItem ("_Quit", "", () => { if (Quit ()) top.Running = false; }),
@@ -266,71 +333,14 @@ class App
                     ClearWindow();
                     if(Byte.Parse(result) == 0)
                     {
-                        Label GuestS = new Label(3, 4, "Guest Lookup");
-                        TextField GuestS_t = new TextField(3, 3, 40, "");
-                        Button Search = new Button(3, 6, "Search");
-                        List<Label> tempcontainer = new List<Label>();
-                        Search.Clicked += () => 
-                        {
-                            win.RemoveAll();
-                            tempcontainer.Clear();
-                            win.Add(GuestS, GuestS_t, Search);
-                            List<Guest> guestresult = repo.GuestLookUp(GuestS_t.Text.ToString(), Globals.current_location);
-                            ustring[] guestsresultarr = new ustring[guestresult.Count];
-                            for (int i = 0; i < guestresult.Count; i++)
-                            {
-                                guestsresultarr[i] = ustring.Make($"Name: {guestresult[i].getFirstName()} {guestresult[i].getLastName()} | Room: {guestresult[i].getRoom()} | Credits Remaining: {guestresult[i].getCredit()} | Checkedin? : {guestresult[i].getCheckedIn()}" );
-                                Label temp = new Label(3, 8+i, guestsresultarr[i]);
-                                tempcontainer.Add(temp);
-                            }
-                            for (int i = 0; i < tempcontainer.Count; i++)
-                            {
-                                win.Add(tempcontainer[i]);
-                            }
-                            GuestS_t.Text = "";
-                        };
-                        
+                        EmployeeScreen();
                         top.Add(employee_menu);
-                        win.Add(GuestS, GuestS_t, Search);
                         Globals.current_location = login_rg.SelectedItem+1;
                         Globals.admin = false;
                     }
                     else
                     {
-                        Label GuestS = new Label(3, 4, "Guest Lookup");
-                        TextField GuestS_t = new TextField(3, 3, 40, "");
-                        Button Search = new Button(3, 6, "Search");
-                        List<Label> tempcontainer = new List<Label>();
-                        List<Button> tempcontainer_B = new List<Button>();
-                        Search.Clicked += () => 
-                        {
-                            win.RemoveAll();
-                            tempcontainer.Clear();
-                            win.Add(GuestS, GuestS_t, Search);
-                            List<Guest> guestresult = repo.GuestLookUp(GuestS_t.Text.ToString(), Globals.current_location);
-                            ustring[] guestsresultarr = new ustring[guestresult.Count];
-                            for (int i = 0; i < guestresult.Count; i++)
-                            {
-                                guestsresultarr[i] = ustring.Make($"Name: {guestresult[i].getFirstName()} {guestresult[i].getLastName()} | Room: {guestresult[i].getRoom()} | Credits Remaining: {guestresult[i].getCredit()} | Checkedin? : {guestresult[i].getCheckedIn()}" );
-                                Label temp = new Label(3, 8+i, guestsresultarr[i]);
-                                Button tempB = new Button(100, 8+i, "Edit" );
-                                tempcontainer.Add(temp);
-                                tempcontainer_B.Add(tempB);
-                            }
-                            for (int i = 0; i < tempcontainer.Count; i++)
-                            {
-                                win.Add(tempcontainer[i]);
-                                win.Add(tempcontainer_B[i]);
-                                tempcontainer_B[i].Clicked += () => {
-                                Guest guest = repo.ViewGuest(guestresult[i-guestresult.Count].getId(), Globals.current_location);
-                                EditGuest(guest); // i ends up being length of results not adding to every iteration
-                                };
-                                
-                            }
-                            GuestS_t.Text = "";
-                        };
-                        
-                        win.Add(GuestS, GuestS_t, Search);
+                        EmployeeScreen();
                         top.Add(admin_menu);
                         Globals.current_location = login_rg.SelectedItem+1;
                         Globals.admin = true;

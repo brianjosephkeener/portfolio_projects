@@ -15,5 +15,6 @@ namespace Proj_0.Data
         public List<Guest> GuestLookUp(string input, int location_id);
         public Guest ViewGuest(int id, int location_id);
         public void EditGuest(int id, string confirmation_number, string first_name, string last_name, string room, decimal credit, int durationofstay, int location_id, int room_id);
+        public List<Guest> GuestAll(int location_id);
     }
 }

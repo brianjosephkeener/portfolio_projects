@@ -19,13 +19,16 @@ namespace Proj_0.Models
 
         private DateTime CreatedAt {get;set;}
         private DateTime UpdatedAt {get; set;}
-        public Guest(int id, string first_name, string last_name, string room, int location_id, int room_id, DateTime CreatedAt, DateTime UpdatedAt)
+        public Guest(int id, string first_name, string last_name, string room, int location_id, int room_id, DateTime CreatedAt, DateTime UpdatedAt, byte checked_in, int durationofstay, decimal credit, string confirmation_number)
         {
             this.id = id;
             this.first_name = first_name;
             this.last_name = last_name;
             this.room = room;
             this.location_id = location_id;
+            this.durationofstay = durationofstay;
+            this.credit = credit;
+            this.confirmation_number = confirmation_number;
             this.room_id = room_id;
             this.CreatedAt = CreatedAt;
             this.UpdatedAt = UpdatedAt;
@@ -98,7 +101,9 @@ namespace Proj_0.Models
 
         public bool getCheckedIn()
         {
-            return (this.checked_in == 0) ? false : true;
+            byte f = 0;
+            Console.WriteLine(this.checked_in);
+            return (this.checked_in == f) ? false : true;
         }
 
         public byte SetCheckedIn(byte checked_in)

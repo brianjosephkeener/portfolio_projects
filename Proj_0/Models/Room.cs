@@ -58,8 +58,12 @@ namespace Proj_0.Models
         {
             return this.price = price;
         }
-        public string getDescription()
+        public string? getDescription()
         {
+            if(this.description == null)
+            {
+                return "No description available";
+            }
             return this.description;
         }
         public string setDescription(string description)

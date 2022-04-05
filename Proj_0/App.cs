@@ -72,46 +72,16 @@ class App
 
 
             top.Add(win);
-
-
-            // menubar library
-
-            MenuBar init_menu = new MenuBar(new MenuBarItem[] {
-                        new MenuBarItem ("_Actions", new MenuItem [] {
-                            new MenuItem ("_Quit", "", () => { if (Quit ()) top.Running = false; })
-                        }),
-                    });
-
-            MenuBar employee_menu = new MenuBar(new MenuBarItem[] {
-                        new MenuBarItem ("_Actions", new MenuItem [] {
-                            new MenuItem ("_Register Guest", "", () => { if (true) RegisterGuestWin ();}),
-                            new MenuItem ("_Guest Check-in", "", () => { if (Quit ()) top.Running = false; }),
-                            new MenuItem ("_Guest Edit", "", () => { if (Quit ()) top.Running = false; }),
-                            new MenuItem ("_Guest Check-out", "", () => { if (Quit ()) top.Running = false; }),
-                            new MenuItem ("_Quit", "", () => { if (Quit ()) top.Running = false; }),
-                        }),
-                    });
-
-            MenuBar admin_menu = new MenuBar(new MenuBarItem[] {
-                        new MenuBarItem ("_Actions", new MenuItem [] {
-                            new MenuItem ("_Register Guest", "", () => { if (RegisterGuestWin ()) ;}),
-                            new MenuItem ("_Guest Check-in", "", () => { if (Quit ()) top.Running = false; }),
-                            new MenuItem ("_Guest Edit", "", () => { if (Quit ()) top.Running = false; }),
-                            new MenuItem ("_Guest Check-out", "", () => { if (Quit ()) top.Running = false; }),
-                            new MenuItem ("_Employee Actions", "", () => { if (Quit ()) top.Running = false; }),
-                            new MenuItem ("_Quit", "", () => { if (Quit ()) top.Running = false; }),
-                        }),
-                    });
-
-            //
             
-            top.Add(init_menu);
-
-            // menubar function library
+            Loggout();
 
             static bool Quit()
             {
                 var n = MessageBox.Query(50, 7, "Warning", "Are you sure you want to quit?", "Yes", "No");
+                if(n == 1)
+                {
+                    return false;
+                }
                 return true;
             }
 
@@ -120,6 +90,36 @@ class App
                     top.RemoveAll();
                     win.RemoveAll();
                     top.Add(win);
+            }
+
+            void Register_Complete()
+            {
+                ClearWindow();
+            MenuBar employee_menu = new MenuBar(new MenuBarItem[] {
+                        new MenuBarItem ("_Actions", new MenuItem [] {
+                            new MenuItem ("_Register Guest", "", () => { if (true) RegisterGuestWin ();}),
+                            new MenuItem ("_Loggout", "", () => { if (true) Loggout(); }),
+                            new MenuItem ("_Quit", "", () => { if (Quit ()) top.Running = false; }),
+                        }),
+                    });
+
+            MenuBar admin_menu = new MenuBar(new MenuBarItem[] {
+                        new MenuBarItem ("_Actions", new MenuItem [] {
+                            new MenuItem ("_Register Guest", "", () => { if (true) RegisterGuestWin ();}),
+                            new MenuItem ("_Guest Edit", "", () => { if (Quit ()) top.Running = false; }),
+                            new MenuItem ("_Employee Actions", "", () => { if (Quit ()) top.Running = false; }),
+                            new MenuItem ("_Loggout", "", () => { if (true) Loggout(); }),
+                            new MenuItem ("_Quit", "", () => { if (Quit ()) top.Running = false; }),
+                        }),
+                    });
+                if(Globals.admin == false)
+                {
+                    top.Add(employee_menu);
+                }
+                else
+                {
+                    top.Add(admin_menu);
+                }
             }
 
             bool RegisterGuestWin()
@@ -132,48 +132,10 @@ class App
             {
                 loc_rooms[i] = ustring.Make($"{rooms[i].getName()} | Vacancies: {rooms[i].getAmount()} |  Price: {rooms[i].getPrice()} | Description: {rooms[i].getDescription()}");
             }
-
-            MenuBar employee_menu = new MenuBar(new MenuBarItem[] {
-                        new MenuBarItem ("_Actions", new MenuItem [] {
-                            new MenuItem ("_Register Guest", "", () => { if (true) RegisterGuestWin ();}),
-                            new MenuItem ("_Guest Check-in", "", () => { if (Quit ()) top.Running = false; }),
-                            new MenuItem ("_Guest Edit", "", () => { if (Quit ()) top.Running = false; }),
-                            new MenuItem ("_Guest Check-out", "", () => { if (Quit ()) top.Running = false; }),
-                            new MenuItem ("_Quit", "", () => { if (Quit ()) top.Running = false; }),
-                        }),
-                    });
-
-            MenuBar admin_menu = new MenuBar(new MenuBarItem[] {
-                        new MenuBarItem ("_Actions", new MenuItem [] {
-                            new MenuItem ("_Return to Main", "", () => { if (Quit ()) top.Running = false; }),
-                            new MenuItem ("_Register Guest", "", () => { if (RegisterGuestWin ()) ;}),
-                            new MenuItem ("_Guest Check-in", "", () => { if (Quit ()) top.Running = false; }),
-                            new MenuItem ("_Guest Edit", "", () => { if (Quit ()) top.Running = false; }),
-                            new MenuItem ("_Guest Check-out", "", () => { if (Quit ()) top.Running = false; }),
-                            new MenuItem ("_Employee Actions", "", () => { if (Quit ()) top.Running = false; }),
-                            new MenuItem ("_Quit", "", () => { if (Quit ()) top.Running = false; }),
-                        }),
-                    });
-
-            void Register_Complete()
-            {
-                ClearWindow();
-                if(Globals.admin == false)
-                {
-                    top.Add(employee_menu);
-                }
-                else
-                {
-                    top.Add(admin_menu);
-                }
-            }
             MenuBar employee_menu_RG = new MenuBar(new MenuBarItem[] {
                         new MenuBarItem ("_Actions", new MenuItem [] {
                             new MenuItem ("_Return to Main", "", () => { if (true) Register_Complete();}),
-                            new MenuItem ("_Guest Check-in", "", () => { if (Quit ()) top.Running = false; }),
-                            new MenuItem ("_Guest Edit", "", () => { if (Quit ()) top.Running = false; }),
-                            new MenuItem ("_Guest Check-out", "", () => { if (Quit ()) top.Running = false; }),
-                            new MenuItem ("_Logout", "", () => { if (Quit ()) top.Running = false; }),
+                            new MenuItem ("_Logout", "", () => { if (true) Loggout(); }),
                             new MenuItem ("_Quit", "", () => { if (Quit ()) top.Running = false; }),
                         }),
                     });
@@ -203,8 +165,71 @@ class App
                 top.Add(employee_menu_RG);
                 return true;
             }
-            
 
+            void EditGuest(Guest guest)
+            {
+                ClearWindow();
+            MenuBar employee_menu_RG = new MenuBar(new MenuBarItem[] {
+                        new MenuBarItem ("_Actions", new MenuItem [] {
+                            new MenuItem ("_Return to Main", "", () => { if (true) Register_Complete();}),
+                            new MenuItem ("_Logout", "", () => { if (true) Loggout(); }),
+                            new MenuItem ("_Quit", "", () => { if (Quit ()) top.Running = false; }),
+                        }),
+                    });
+             /*
+              - add labels for textfields
+              - fix final submit 
+              - fix edit button on previous page
+              - write unit tests
+              - checked-in?
+             */
+                Label first_name_l = new Label(3, 3, "First Name: ");
+                TextField first_name = new TextField(3, 4, 40, $"{guest.getFirstName()}");
+                Label last_name_l = new Label(3, 5, "Last Name: ");
+                TextField last_name = new TextField(3, 6, 40, $"{guest.getLastName()}");
+                Label room_l = new Label(3, 7, "room #:");
+                TextField room = new TextField(3, 8, 40, $"{guest.getRoom()}");
+                Label credit_l = new Label(3, 9, "credit amount: ");
+                TextField credit = new TextField(3, 10, 40, $"{guest.getCredit()}");
+                Label confirmation_number = new Label(3, 12, $"{guest.getConfirmNum()}");
+                Label durationofstay_l = new Label(3, 14, "Duration of Stay");
+                TextField durationofstay = new TextField(3, 15, 40, $"{guest.getDurationOfStay()}");
+                Button Submit = new Button(30, 30, "Submit");
+            Submit.Clicked += () => {
+                repo.EditGuest(guest.getId(), confirmation_number.Text.ToString(), first_name.Text.ToString(), last_name.Text.ToString(), room.Text.ToString(), Decimal.Parse(credit.Text.ToString()), Int32.Parse(durationofstay.Text.ToString()), Globals.current_location, guest.getRoom_Id());
+                Register_Complete();
+            };
+            top.Add(employee_menu_RG);
+            win.Add(first_name, last_name, room, credit, confirmation_number, durationofstay, Submit, first_name_l, last_name_l, durationofstay_l, credit_l, room_l);
+            }
+            
+            void Loggout()
+            {
+                        MenuBar init_menu = new MenuBar(new MenuBarItem[] {
+                        new MenuBarItem ("_Actions", new MenuItem [] {
+                            new MenuItem ("_Quit", "", () => { if (Quit ()) top.Running = false; })
+                        }),
+                    });
+            MenuBar employee_menu = new MenuBar(new MenuBarItem[] {
+                        new MenuBarItem ("_Actions", new MenuItem [] {
+                            new MenuItem ("_Register Guest", "", () => { if (true) RegisterGuestWin ();}),
+                            new MenuItem ("_Guest Edit", "", () => { if (Quit ()) top.Running = false; }),
+                            new MenuItem ("_Loggout", "", () => { if (true) Loggout(); }),
+                            new MenuItem ("_Quit", "", () => { if (Quit ()) top.Running = false; }),
+                        }),
+                    });
+
+            MenuBar admin_menu = new MenuBar(new MenuBarItem[] {
+                        new MenuBarItem ("_Actions", new MenuItem [] {
+                            new MenuItem ("_Register Guest", "", () => { if (RegisterGuestWin ()) ;}),
+                            new MenuItem ("_Guest Edit", "", () => { if (Quit ()) top.Running = false; }),
+                            new MenuItem ("_Employee Actions", "", () => { if (Quit ()) top.Running = false; }),
+                            new MenuItem ("_Loggout", "", () => { if (true) Loggout(); }),
+                            new MenuItem ("_Quit", "", () => { if (Quit ()) top.Running = false; }),
+                        }),
+                    });
+                ClearWindow();
+                top.Add(init_menu);
             var login = new Label("Username: ") { X = 3, Y = 2 };
             var password = new Label("Password: ")
             {
@@ -225,6 +250,9 @@ class App
                 Width = 40
             };
 
+            Globals.current_location = 0;
+            Globals.admin = false;
+
             // Add some controls
             RadioGroup login_rg = new RadioGroup(3, 10, locations_RG);
             Button okayB = new Button(3, 10+locations.Count+1, "Ok");
@@ -238,13 +266,71 @@ class App
                     ClearWindow();
                     if(Byte.Parse(result) == 0)
                     {
+                        Label GuestS = new Label(3, 4, "Guest Lookup");
+                        TextField GuestS_t = new TextField(3, 3, 40, "");
+                        Button Search = new Button(3, 6, "Search");
+                        List<Label> tempcontainer = new List<Label>();
+                        Search.Clicked += () => 
+                        {
+                            win.RemoveAll();
+                            tempcontainer.Clear();
+                            win.Add(GuestS, GuestS_t, Search);
+                            List<Guest> guestresult = repo.GuestLookUp(GuestS_t.Text.ToString(), Globals.current_location);
+                            ustring[] guestsresultarr = new ustring[guestresult.Count];
+                            for (int i = 0; i < guestresult.Count; i++)
+                            {
+                                guestsresultarr[i] = ustring.Make($"Name: {guestresult[i].getFirstName()} {guestresult[i].getLastName()} | Room: {guestresult[i].getRoom()} | Credits Remaining: {guestresult[i].getCredit()} | Checkedin? : {guestresult[i].getCheckedIn()}" );
+                                Label temp = new Label(3, 8+i, guestsresultarr[i]);
+                                tempcontainer.Add(temp);
+                            }
+                            for (int i = 0; i < tempcontainer.Count; i++)
+                            {
+                                win.Add(tempcontainer[i]);
+                            }
+                            GuestS_t.Text = "";
+                        };
+                        
                         top.Add(employee_menu);
+                        win.Add(GuestS, GuestS_t, Search);
                         Globals.current_location = login_rg.SelectedItem+1;
-                        win.Add(new Label (3, 10, $"{Globals.current_location}"));
                         Globals.admin = false;
                     }
                     else
                     {
+                        Label GuestS = new Label(3, 4, "Guest Lookup");
+                        TextField GuestS_t = new TextField(3, 3, 40, "");
+                        Button Search = new Button(3, 6, "Search");
+                        List<Label> tempcontainer = new List<Label>();
+                        List<Button> tempcontainer_B = new List<Button>();
+                        Search.Clicked += () => 
+                        {
+                            win.RemoveAll();
+                            tempcontainer.Clear();
+                            win.Add(GuestS, GuestS_t, Search);
+                            List<Guest> guestresult = repo.GuestLookUp(GuestS_t.Text.ToString(), Globals.current_location);
+                            ustring[] guestsresultarr = new ustring[guestresult.Count];
+                            for (int i = 0; i < guestresult.Count; i++)
+                            {
+                                guestsresultarr[i] = ustring.Make($"Name: {guestresult[i].getFirstName()} {guestresult[i].getLastName()} | Room: {guestresult[i].getRoom()} | Credits Remaining: {guestresult[i].getCredit()} | Checkedin? : {guestresult[i].getCheckedIn()}" );
+                                Label temp = new Label(3, 8+i, guestsresultarr[i]);
+                                Button tempB = new Button(100, 8+i, "Edit" );
+                                tempcontainer.Add(temp);
+                                tempcontainer_B.Add(tempB);
+                            }
+                            for (int i = 0; i < tempcontainer.Count; i++)
+                            {
+                                win.Add(tempcontainer[i]);
+                                win.Add(tempcontainer_B[i]);
+                                tempcontainer_B[i].Clicked += () => {
+                                Guest guest = repo.ViewGuest(guestresult[i-guestresult.Count].getId(), Globals.current_location);
+                                EditGuest(guest); // i ends up being length of results not adding to every iteration
+                                };
+                                
+                            }
+                            GuestS_t.Text = "";
+                        };
+                        
+                        win.Add(GuestS, GuestS_t, Search);
                         top.Add(admin_menu);
                         Globals.current_location = login_rg.SelectedItem+1;
                         Globals.admin = true;
@@ -255,7 +341,7 @@ class App
                     passText.Text = "";
                     win.Remove(fLogin);
                     win.Add(
-                        new Label (50, 2, "failed login, try again")
+                        new Label (55, 2, "failed login, try again")
                     );
                 }
             };
@@ -266,12 +352,13 @@ class App
             win.Add(
                 // The ones with layout system, Computed
                 login, password, loginText, passText,
-                // The ones laid out like an australopithecus, with Absolute positions:
                 new Label(3, 8, "Select your hotel location before login"),
                 login_rg,
                 okayB,
                 cancelB
             );
+            }
+        
 
             
 

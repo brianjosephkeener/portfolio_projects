@@ -114,13 +114,15 @@ class App
                                 {
                                     win.Add(tempcontainer[i]);
                                     win.Add(tempcontainer_B[i]);
-                                    Console.WriteLine(i);
-                                    tempcontainer_B[i].Clicked += () => {
-                                    Console.WriteLine(i);
-                                    guest.Add(repo.ViewGuest(guestresult[i].getId(), Globals.current_location));
-                                    EditGuest(guest[i]); // i ends up being length of results not adding to every iteration
-                                    };
+                                    tempcontainer_B[i].Id = ustring.Make(i.ToString());
                                     
+                                }
+                                foreach (Button item in tempcontainer_B)
+                                {
+                                    item.Clicked += () => {
+                                        guest.Add(repo.ViewGuest(guestresult[Int32.Parse(item.Id.ToString())].getId(), Globals.current_location));
+                                        EditGuest(guest[0]);
+                                    };
                                 }
                             }
                             else
@@ -130,25 +132,29 @@ class App
                             win.Add(GuestS, GuestS_t, Search);
                             List<Guest> guestresult = repo.GuestLookUp(GuestS_t.Text.ToString(), Globals.current_location);
                             ustring[] guestsresultarr = new ustring[guestresult.Count];
-                            for (int i = 0; i < guestresult.Count; i++)
-                            {
-                                guestsresultarr[i] = ustring.Make($"Name: {guestresult[i].getFirstName()} {guestresult[i].getLastName()} | Room: {guestresult[i].getRoom()} | Credits Remaining: {guestresult[i].getCredit()} | Checkedin? : {guestresult[i].getCheckedIn()}" );
-                                Label temp = new Label(3, 8+i, guestsresultarr[i]);
-                                Button tempB = new Button(100, 8+i, "Edit" );
-                                tempcontainer.Add(temp);
-                                tempcontainer_B.Add(tempB);
-                            }
+                                for (int i = 0; i < guestresult.Count; i++)
+                                {
+                                    guestsresultarr[i] = ustring.Make($"Name: {guestresult[i].getFirstName()} {guestresult[i].getLastName()} | Room: {guestresult[i].getRoom()} | Credits Remaining: {guestresult[i].getCredit()} | Checkedin? : {guestresult[i].getCheckedIn() |}" );
+                                    Label temp = new Label(3, 8+i, guestsresultarr[i]);
+                                    Button tempB = new Button(100, 8+i, "Edit" );
+                                    tempcontainer.Add(temp);
+                                    tempcontainer_B.Add(tempB);
+                                }
                                 List<Guest> guest = new List<Guest>();
-                            for (int i = 0; i < tempcontainer.Count; i++)
-                            {
-                                win.Add(tempcontainer[i]);
-                                win.Add(tempcontainer_B[i]);
-                                tempcontainer_B[i].Clicked += () => {
-                                guest.Add(repo.ViewGuest(guestresult[i].getId(), Globals.current_location));
-                                EditGuest(guest[i]); // i ends up being length of results not adding to every iteration
-                                };
-                                
-                            }
+                                for (int i = 0; i < tempcontainer.Count; i++)
+                                {
+                                    win.Add(tempcontainer[i]);
+                                    win.Add(tempcontainer_B[i]);
+                                    tempcontainer_B[i].Id = ustring.Make(i.ToString());
+                                    
+                                }
+                                foreach (Button item in tempcontainer_B)
+                                {
+                                    item.Clicked += () => {
+                                        guest.Add(repo.ViewGuest(guestresult[Int32.Parse(item.Id.ToString())].getId(), Globals.current_location));
+                                        EditGuest(guest[0]);
+                                    };
+                                }
                             }
                             GuestS_t.Text = "";
                         };

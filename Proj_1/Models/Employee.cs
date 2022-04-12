@@ -7,18 +7,16 @@ namespace Proj_0.Models
         private int id {get; set;}
         private string username {get; set;}
         private string password {get;set;}
-        private byte admin {get;set;}
 
         private int location_id {get; set;}
 
         private DateTime CreatedAt {get;set;}
         private DateTime UpdatedAt {get; set;}
-        public Employee(int id, string username, string password, byte admin, int location_id, DateTime CreatedAt, DateTime UpdatedAt)
+        public Employee(int id, string username, string password, int location_id, DateTime CreatedAt, DateTime UpdatedAt)
         {
             this.id = id;
             this.username = username;
             this.password = password;
-            this.admin = admin;
             this.CreatedAt = CreatedAt;
             this.UpdatedAt = UpdatedAt;
         }
@@ -46,16 +44,6 @@ namespace Proj_0.Models
         public int GetId()
         {
             return this.id;
-        }
-
-        public bool GetAdmin()
-        {
-            return (this.admin == 0) ? false : true;
-        }
-
-        public byte SetAdmin(byte admin)
-        {
-            return (admin == 0) ? this.admin = 0: this.admin = 1;
         }
 
         public int Location_Id()

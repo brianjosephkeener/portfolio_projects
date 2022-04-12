@@ -2,7 +2,7 @@ using System;
 
 namespace Proj_0.Models
 {
-    public class Room 
+    public class Product
     {
         private int id {get; set;}
         private string name {get; set;}
@@ -13,7 +13,7 @@ namespace Proj_0.Models
 
         private DateTime CreatedAt {get;set;}
         private DateTime UpdatedAt {get; set;}
-        public Room(int id, string name, int amount, decimal price, string description, int location_id, DateTime CreatedAt, DateTime UpdatedAt)
+        public Product(int id, string name, int amount, decimal price, string description, int location_id, DateTime CreatedAt, DateTime UpdatedAt)
         {
             this.id = id;
             this.name = name;

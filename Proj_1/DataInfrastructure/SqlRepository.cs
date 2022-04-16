@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Proj_0.Models;
+using Proj_1.Models;
 using System.Data.SqlClient;
 
-namespace Proj_0.Data
+namespace Proj_1.Data
 {
     public class SqlRepository : IRepository
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace Proj_0.Models
+namespace Proj_1.Models
 {
     public class Customer
     {

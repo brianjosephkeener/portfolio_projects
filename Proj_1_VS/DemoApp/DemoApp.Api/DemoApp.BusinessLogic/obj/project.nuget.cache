@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "vmGcy/ZOPKtiOZvpOCoL1NLrIkzQEz9VEppWHPcnZWsO3IW3UOCLY1uwsvlOMtyVTFVeIbohmccPibZ+ZJ0rIg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\root\\Desktop\\portfolio_projects\\Proj_1_VS\\DemoApp\\DemoApp.Api\\DemoApp.BusinessLogic\\DemoApp.BusinessLogic.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\root\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\root\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\root\\.nuget\\packages\\swashbuckle.aspnetcore\\6.3.0\\swashbuckle.aspnetcore.6.3.0.nupkg.sha512",
+    "C:\\Users\\root\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.3.0\\swashbuckle.aspnetcore.swagger.6.3.0.nupkg.sha512",
+    "C:\\Users\\root\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.3.0\\swashbuckle.aspnetcore.swaggergen.6.3.0.nupkg.sha512",
+    "C:\\Users\\root\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.3.0\\swashbuckle.aspnetcore.swaggerui.6.3.0.nupkg.sha512"
+  ],
+  "logs": []
+}

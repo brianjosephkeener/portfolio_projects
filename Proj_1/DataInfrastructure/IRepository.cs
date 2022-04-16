@@ -1,7 +1,7 @@
 using System;
-using Proj_0.Models;
+using Proj_1.Models;
 
-namespace Proj_0.Data
+namespace Proj_1.Data
 {
     public interface IRepository
     {

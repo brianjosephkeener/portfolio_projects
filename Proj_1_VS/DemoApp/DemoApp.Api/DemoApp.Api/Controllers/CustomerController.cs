@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 using System.Data.SqlClient;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace DemoApp.Api.Controllers
 {
@@ -37,11 +38,6 @@ namespace DemoApp.Api.Controllers
                 _logger.LogError(ex, "SQL error while getting customer list.");
                 return StatusCode(500);
             }
-            foreach (Customer item in customers)
-            {
-                Console.WriteLine(item.getFirstName());
-                Console.WriteLine(item.getLastName());
-            }
             return customers;
         }
         [HttpGet("{input}")]
@@ -59,5 +55,13 @@ namespace DemoApp.Api.Controllers
                     }
                     return customer;
                 }
-            }
+        [HttpPost]
+        public async Task CreateCustomerAsync([FromBody] JsonElement input)
+        {
+            string json = JsonSerializer.Serialize(input);
+            Customer? customer = JsonSerializer.Deserialize<Customer>(json);
+            await _repository.CreateCustomer(customer);
+
+        }
+    }
 }

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "IqrEdba6a4yYowd7pbCBViWmRsgACzpHyqBKHa7GeyE=",
+  "Source": "DemoApp.Api",
+  "BasePath": "_content/DemoApp.Api",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

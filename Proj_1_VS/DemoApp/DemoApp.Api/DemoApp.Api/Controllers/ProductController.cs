@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 using System.Data.SqlClient;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace DemoApp.Api.Controllers
 {
@@ -24,13 +25,13 @@ namespace DemoApp.Api.Controllers
         }
 
         // Methods
-        [HttpGet]
-        public async Task<ActionResult<List<Product>>> GetAllProductsAsync()
+        [HttpGet("{input}")]
+        public async Task<ActionResult<List<Product>>> GetAllProductsAsync(string input)
         {
             List<Product> products;
             try
             {
-                products = await _repository.GetAllProducts();
+                products = await _repository.GetAllProducts(input);
             }
             catch (SqlException ex)
             {
@@ -39,7 +40,7 @@ namespace DemoApp.Api.Controllers
             }
             return products;
         }
-        [HttpGet("{input}")]
+        [HttpGet("search/{input}")]
         public async Task<ActionResult<List<Product>>> GetProductAsync(string input)
                 {
                     List<Product> products;
@@ -54,5 +55,13 @@ namespace DemoApp.Api.Controllers
                     }
                     return products;
                 }
-            }
+        [HttpPost("purchase")]
+        public async Task PurchaseProductAsync([FromBody] JsonElement input)
+        {
+            string json = JsonSerializer.Serialize(input);
+            Console.WriteLine(json);
+            List<Product> product = JsonSerializer.Deserialize<List<Product>>(json);
+            await _repository.Purchase(product);
+        }
+    }
 }

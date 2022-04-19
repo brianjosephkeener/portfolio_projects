@@ -7,6 +7,17 @@ var builder = WebApplication.CreateBuilder(args);
 // Argument, Hardcoded, File, User Secrets, Environmental Variables
 string connectionString = builder.Configuration["connectionString"];
 
+/*
+
+
+Debug = string connectionString = builder.Configuration["connectionString"];
+
+Release = string connectionString = builder.Configuration.GetConnectionString("RPS-DB-Connection");
+
+Release v2 (works) after publish to azure = string connectionString = builder.Configuration.GetConnectionString("connectionString");
+
+*/
+
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
@@ -26,4 +37,6 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
+
+
 

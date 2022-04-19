@@ -40,19 +40,19 @@ namespace DemoApp.Api.Controllers
             return locations;
         }
         [HttpGet("{input}")]
-        public async Task<ActionResult<Location>> GetLocationAsync(string input)
+        public async Task<ActionResult<List<Customer>>> GetLocationCustomerAsync(string input)
                 {
-                    Location location;
+                    List<Customer> customers = new List<Customer>();
                     try
                     {
-                        location = await _repository.GetLocation(Int32.Parse(input));
+                        customers = await _repository.GetLocationCustomers(Int32.Parse(input));
                     }
                     catch (SqlException ex)
                     {
                         _logger.LogError(ex, $"SQL error while getting location: {input}.");
                         return StatusCode(500);
                     }
-                    return location;
+                    return customers;
                 }
-            }
+    }
 }

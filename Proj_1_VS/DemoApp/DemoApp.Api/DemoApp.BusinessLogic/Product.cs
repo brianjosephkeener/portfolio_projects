@@ -1,4 +1,6 @@
-﻿namespace DemoApp.BusinessLogic
+﻿using System.Text.Json.Serialization;
+
+namespace DemoApp.BusinessLogic
 {
     public class Product
     {
@@ -6,14 +8,14 @@
         public int id { get; set; }
         public string name { get; set; }
         public int amount { get; set; }
-        public decimal price { get; set; }
+        public string price { get; set; }
         public string description { get; set; }
 
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
         public int location_id { get; set; }
-
-        public Product(int id, string name, int amount, decimal price, string description, DateTime CreatedAt, DateTime UpdatedAt, int location_id)
+        [JsonConstructor]
+        public Product(int id, string name, int amount, string price, string description, DateTime CreatedAt, DateTime UpdatedAt, int location_id)
         {
             this.id = id;
             this.name = name;
@@ -45,12 +47,12 @@
             return this.amount = amount;
         }
 
-        public decimal getPrice()
+        public string getPrice()
         {
             return this.price;
         }
 
-        public decimal setPrice(decimal price)
+        public string setPrice(string price)
         {
             return this.price = price;
         }

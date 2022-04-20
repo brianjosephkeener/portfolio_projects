@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Connection String:
 // Argument, Hardcoded, File, User Secrets, Environmental Variables
-string connectionString = builder.Configuration["connectionString"];
+string connectionString = builder.Configuration.GetConnectionString("connectionString");
 
 /*
 

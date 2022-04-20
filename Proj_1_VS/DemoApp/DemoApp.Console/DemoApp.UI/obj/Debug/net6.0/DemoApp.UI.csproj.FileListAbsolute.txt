@@ -22,3 +22,5 @@ C:\Users\root\Desktop\portfolio_projects\Proj_1_VS\DemoApp\DemoApp.Console\DemoA
 C:\Users\root\Desktop\portfolio_projects\Proj_1_VS\DemoApp\DemoApp.Console\DemoApp.UI\obj\Debug\net6.0\refint\DemoApp.UI.dll
 C:\Users\root\Desktop\portfolio_projects\Proj_1_VS\DemoApp\DemoApp.Console\DemoApp.UI\obj\Debug\net6.0\DemoApp.UI.pdb
 C:\Users\root\Desktop\portfolio_projects\Proj_1_VS\DemoApp\DemoApp.Console\DemoApp.UI\obj\Debug\net6.0\ref\DemoApp.UI.dll
+C:\Users\root\Desktop\portfolio_projects\Proj_1_VS\DemoApp\DemoApp.Console\DemoApp.UI\bin\Debug\net6.0\DemoApp.UI.runtimeconfig.json
+C:\Users\root\Desktop\portfolio_projects\Proj_1_VS\DemoApp\DemoApp.Console\DemoApp.UI\obj\Debug\net6.0\DemoApp.UI.genruntimeconfig.cache

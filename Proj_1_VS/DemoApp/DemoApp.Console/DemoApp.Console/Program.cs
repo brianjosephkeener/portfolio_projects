@@ -15,7 +15,7 @@ namespace DempApp.ConApp
         static async Task Main(string[] args)
         {
 
-            Uri uri = new Uri("https://localhost:7266");
+            Uri uri = new Uri("https://bkeener.azurewebsites.net/");
 
             IO io = new IO(uri);
 

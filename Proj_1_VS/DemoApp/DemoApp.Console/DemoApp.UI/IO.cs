@@ -66,15 +66,6 @@ namespace DemoApp.UI
             Console.WriteLine("[4] - View Location Details");
             string? input = Console.ReadLine();
             Console.Clear();
-            //if (int.TryParse(input, out choice))
-            //{
-            //    return choice;
-            //}
-            //else
-            //{
-            //    choice = -1;
-            //    return choice;
-            //}
             if (!int.TryParse(input, out choice))
             { choice = -1; }
             return choice;
@@ -121,7 +112,7 @@ namespace DemoApp.UI
                             {
                                 if(product.id == order_list[i].id)
                                 {
-                                    product.amount = order_list[i].amount;
+                                    product.amount = product.amount - order_list[i].amount;
                                 }
                             }
                             Console.WriteLine($"Id: {product.id} | Name: {product.name} | Amount: {product.amount} | Price: {product.price} | Description: {product.description}");
